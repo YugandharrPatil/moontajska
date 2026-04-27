@@ -1,11 +1,55 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import thumb1 from "../assets/thumbnails/2026-04-27-213414_hyprshot.png";
+import thumb2 from "../assets/thumbnails/2026-04-27-213425_hyprshot.png";
+import thumb3 from "../assets/thumbnails/2026-04-27-213432_hyprshot.png";
+import thumb4 from "../assets/thumbnails/2026-04-27-213438_hyprshot.png";
+import thumb5 from "../assets/thumbnails/2026-04-27-213452_hyprshot.png";
+import thumb6 from "../assets/thumbnails/2026-04-27-213459_hyprshot.png";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const videos = [
+	{ id: 1, title: "LillySkin | Apocalypse", duration: "01:08", image: thumb1 },
+	{ id: 2, title: "900 | Rap Battle", duration: "02:06", image: thumb2 },
+	{ id: 3, title: "Moontajska Productions", duration: "00:20", image: thumb3 },
+	{ id: 4, title: "Sisters Republic | Viva la Vida", duration: "00:37", image: thumb4 },
+	{ id: 5, title: "Eco Campaign", duration: "01:15", image: thumb5 },
+	{ id: 6, title: "Yoga Flow", duration: "03:42", image: thumb6 },
+];
 ---
 
 <Layout>
-	<Welcome />
+	<main class="max-w-[1400px] mx-auto p-4 md:p-12">
+		<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+			{
+				videos.map((video) => (
+					<div class="bg-white rounded-xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.05)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,0,0,0.1)] cursor-pointer group">
+						<div class="relative aspect-[4/5] overflow-hidden">
+							<Image src={video.image} alt={video.title} class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
+							<div class="absolute inset-0 bg-black/20 flex justify-center items-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+								<div class="w-[60px] h-[60px] bg-black/70 rounded-full flex justify-center items-center backdrop-blur-sm scale-80 transition-transform duration-300 ease-[cubic-bezier(0.175,0.885,0.32,1.275)] group-hover:scale-100">
+									<svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+										<path d="M8 5v14l11-7z" />
+									</svg>
+								</div>
+							</div>
+							<div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/70 to-transparent flex items-center gap-4">
+								<span class="text-white text-xs font-semibold bg-black/50 px-2 py-1 rounded">{video.duration}</span>
+								<div class="flex-1 h-1 bg-white/30 rounded-full overflow-hidden">
+									<div class="w-[30%] h-full bg-white" />
+								</div>
+							</div>
+						</div>
+						<div class="p-5 flex gap-4 items-center">
+							<div class="w-9 h-9 bg-[#e5e5e5] rounded-full shrink-0 bg-[url('/src/assets/astro.svg')] bg-cover bg-center" />
+							<div class="flex-1 min-w-0">
+								<h3 class="m-0 mb-1 text-lg font-semibold whitespace-nowrap overflow-hidden text-ellipsis">{video.title}</h3>
+								<p class="m-0 text-sm text-[#666]">Moontajska Productions</p>
+							</div>
+						</div>
+					</div>
+				))
+			}
+		</section>
+	</main>
 </Layout>
