@@ -1,43 +1,65 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import VimeoEmbed from "../components/VimeoEmbed.astro";
-import { Image } from "astro:assets";
-import thumb1 from "../assets/thumbnails/2026-04-27-213414_hyprshot.png";
-import thumb2 from "../assets/thumbnails/2026-04-27-213425_hyprshot.png";
-import thumb3 from "../assets/thumbnails/2026-04-27-213432_hyprshot.png";
-import thumb4 from "../assets/thumbnails/2026-04-27-213438_hyprshot.png";
-import thumb5 from "../assets/thumbnails/2026-04-27-213452_hyprshot.png";
-import thumb6 from "../assets/thumbnails/2026-04-27-213459_hyprshot.png";
 
-const videos = [
-	{ id: 1, title: "LillySkin | Apocalypse", duration: "01:08", image: thumb1, vimeoId: "1011950908" },
-	{ id: 2, title: "900 | Rap Battle", duration: "02:06", image: thumb2, vimeoId: "1011954936" },
-	{ id: 3, title: "Moontajska Productions", duration: "00:20", image: thumb3, vimeoId: "881686470" },
-	{ id: 4, title: "Sisters Republic | Viva la Vida", duration: "00:37", image: thumb4, vimeoId: "769455742" },
-	{ id: 5, title: "Eco Campaign", duration: "01:15", image: thumb5, vimeoId: "1011936857" },
-	{ id: 6, title: "Yoga Flow", duration: "03:42", image: thumb6, vimeoId: "1011968294" },
+interface VideoItem {
+	id: string;
+	title: string;
+	aspect: "portrait" | "landscape";
+	span: string;
+}
+
+const leftVideos: VideoItem[] = [
+	{ id: "1011950908", title: "900 | Matrix", aspect: "portrait", span: "col-span-1" },
+	{ id: "1011954936", title: "900 | Trump", aspect: "portrait", span: "col-span-1" },
+	{ id: "769455742", title: "Deep Belief", aspect: "landscape", span: "col-span-2" },
+	{ id: "1011953182", title: "900 | Thanos", aspect: "portrait", span: "col-span-1" },
+	{ id: "1011965145", title: "Boku | Pshiit", aspect: "portrait", span: "col-span-1" },
+	{ id: "918612476", title: "Boku | Alien", aspect: "landscape", span: "col-span-2" },
+	{ id: "1051332477", title: "Kolsquare | Influencer Marketing", aspect: "landscape", span: "col-span-2" },
+	{ id: "918597931", title: "Caats | Chanson", aspect: "landscape", span: "col-span-2" },
+	{ id: "1051884000", title: "Bourse aux Livres | Appart", aspect: "portrait", span: "col-span-1" },
+	{ id: "1011927125", title: "900 | Histoire Gel Douche", aspect: "portrait", span: "col-span-1" },
+];
+
+const rightVideos: VideoItem[] = [
+	{ id: "881686470", title: "Sisters Republic | Chaperon Rouge", aspect: "landscape", span: "col-span-2" },
+	{ id: "1011936857", title: "900 | Baywatch", aspect: "portrait", span: "col-span-1" },
+	{ id: "1011968294", title: "900 | Dealers", aspect: "portrait", span: "col-span-1" },
+	{ id: "882848412", title: "Sisters Republic | Barbie", aspect: "landscape", span: "col-span-2" },
+	{ id: "851884840", title: "Boku | Diner de C*l", aspect: "landscape", span: "col-span-2" },
+	{ id: "1011969359", title: "Boku | Metro", aspect: "portrait", span: "col-span-1" },
+	{ id: "1011924278", title: "900 | Cemetery", aspect: "portrait", span: "col-span-1" },
+	{ id: "918611255", title: "Boku | A**holes Anonymous", aspect: "landscape", span: "col-span-2" },
+	{ id: "1064022854", title: "Spliiit | Scooter", aspect: "portrait", span: "col-span-1" },
+	{ id: "1064022944", title: "Spliiit | Newspaper", aspect: "portrait", span: "col-span-1" },
 ];
 ---
 
 <Layout>
-	<main class="max-w-[1400px] mx-auto p-4 md:p-12">
-		<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-			{
-				videos.map((video) => (
-					<div class="bg-white rounded-xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.05)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,0,0,0.1)] cursor-pointer group">
-						<div class="relative aspect-[4/5] overflow-hidden bg-black flex items-center justify-center">
-							<VimeoEmbed videoId={video.vimeoId} />
+	<main class="w-full max-w-[1400px] mx-auto px-4 py-6 md:px-8 md:py-8">
+		<section class="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 items-start">
+			<!-- Left Column -->
+			<div class="grid grid-cols-2 gap-2 md:gap-3">
+				{
+					leftVideos.map((video) => (
+						<div class={video.span}>
+							<VimeoEmbed videoId={video.id} title={video.title} aspect={video.aspect} />
 						</div>
-						<div class="p-5 flex gap-4 items-center">
-							<div class="w-9 h-9 bg-[#e5e5e5] rounded-full shrink-0 bg-[url('/src/assets/astro.svg')] bg-cover bg-center" />
-							<div class="flex-1 min-w-0">
-								<h3 class="m-0 mb-1 text-lg font-semibold whitespace-nowrap overflow-hidden text-ellipsis">{video.title}</h3>
-								<p class="m-0 text-sm text-[#666]">Moontajska Productions</p>
-							</div>
+					))
+				}
+			</div>
+
+			<!-- Right Column -->
+			<div class="grid grid-cols-2 gap-2 md:gap-3">
+				{
+					rightVideos.map((video) => (
+						<div class={video.span}>
+							<VimeoEmbed videoId={video.id} title={video.title} aspect={video.aspect} />
 						</div>
-					</div>
-				))
-			}
+					))
+				}
+			</div>
 		</section>
 	</main>
 </Layout>

@@ -1,11 +1,18 @@
 ---
+import { ClientRouter } from 'astro:transitions';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
+
+interface Props {
+	title?: string;
+}
+
+const { title = "Moontajska Productions" } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" transition:animate="none">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -15,7 +22,8 @@ import '../styles/global.css';
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-		<title>Moontajska Productions</title>
+		<title>{title === "Moontajska Productions" ? title : `${title} – Moontajska Productions`}</title>
+		<ClientRouter fallback="swap" />
 	</head>
 	<body class="bg-[#f8f9fa] text-[#1a1a1a] font-['Outfit'] m-0 p-0 w-full min-h-screen flex flex-col">
 		<Navbar />

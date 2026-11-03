@@ -3,12 +3,26 @@ import { defineConfig } from "astro/config";
 
 import tailwindcss from "@tailwindcss/vite";
 
+import icon from "astro-icon";
+
 // https://astro.build/config
 export default defineConfig({
-	devToolbar: {
-		enabled: false,
+  prefetch: {
+    prefetchAll: true,
+    defaultStrategy: "hover",
+  },
+
+  server: {
+      port: 3000,
 	},
-	vite: {
-		plugins: [tailwindcss()],
+
+  devToolbar: {
+      enabled: false,
 	},
+
+  vite: {
+      plugins: [tailwindcss()],
+	},
+
+  integrations: [icon()],
 });
