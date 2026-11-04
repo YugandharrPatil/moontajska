@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 import contactImg from '../assets/Contact-icon-300x221.jpg';
+import BookUsForm from '../components/BookUsForm';
 ---
 
 <Layout>
@@ -22,18 +23,7 @@ import contactImg from '../assets/Contact-icon-300x221.jpg';
 						<a href="tel:+33658485100" class="text-xl font-medium text-black underline decoration-transparent hover:decoration-black transition-colors duration-300">+33 6 58 48 51 00</a>
 					</div>
 
-					<form class="flex flex-col gap-6">
-						<div class="w-full">
-							<input type="text" placeholder="Your Name" required class="w-full p-4 border border-gray-200 rounded-lg text-base bg-gray-50 focus:outline-none focus:border-black transition-colors duration-300" />
-						</div>
-						<div class="w-full">
-							<input type="email" placeholder="Your Email" required class="w-full p-4 border border-gray-200 rounded-lg text-base bg-gray-50 focus:outline-none focus:border-black transition-colors duration-300" />
-						</div>
-						<div class="w-full">
-							<textarea placeholder="Tell us about your project..." rows="5" required class="w-full p-4 border border-gray-200 rounded-lg text-base bg-gray-50 focus:outline-none focus:border-black transition-colors duration-300"></textarea>
-						</div>
-						<button type="submit" class="self-start px-8 py-4 bg-black text-white rounded-full text-base font-medium tracking-wide hover:opacity-80 transition-opacity duration-300">Send Message</button>
-					</form>
+					<BookUsForm client:load />
 				</div>
 			</div>
 		</section>
