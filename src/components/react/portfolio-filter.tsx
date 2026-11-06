@@ -20,7 +20,7 @@ function VideoCard({ video }: { video: VideoItem }) {
         }`}
       >
         <iframe
-          src={`https://player.vimeo.com/video/${cleanId}?autopause=0&loop=0&muted=0&title=1&portrait=1&byline=1`}
+          src={`https://player.vimeo.com/video/${cleanId}?autopause=0&loop=0&muted=0&title=1&portrait=0&byline=0`}
           className="absolute inset-0 w-full h-full border-0"
           allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
           referrerPolicy="strict-origin-when-cross-origin"

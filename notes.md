@@ -4,14 +4,14 @@
 
 # changes
 
-- remove company name in each logo
-- remove logo also from video
-- sisters republic vide on hero section
-- logos slider (logos from /client page)
-- put same filters are departementstudio.com
-- put load more videos like agenceshort.fr
+- remove company name in each logo - done
+- remove logo also from video - done
+- sisters republic vide on hero section - done
+- logos slider (logos from /client page) - done (logos pending)
+- put same filters are departementstudio.com - done
+- put load more videos like agenceshort.fr - done
 - portfolio page
-	- autoplay of videos in homepage
-	- edges around videos
-- clients testinomiais slider on client page
-- case studies too on client page
+	- autoplay of videos in homepage - pending...
+	- edges around videos - done
+- clients testimoniais slider on client page - later
+- case studies too on client page - later
