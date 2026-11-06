@@ -1,0 +1,118 @@
+---
+import VimeoEmbed from "./vimeo-embed.astro";
+import { portfolioSections, type BentoSection } from "../data/portfolio";
+
+export interface Props {
+	sections?: BentoSection[];
+	limit?: number;
+	heading?: string;
+	subheading?: string;
+	showHeading?: boolean;
+	showSectionTitles?: boolean;
+	showSeeMore?: boolean;
+	seeMoreHref?: string;
+	seeMoreText?: string;
+}
+
+const {
+	sections = portfolioSections,
+	limit,
+	heading = "Portfolio",
+	subheading = "A curated showcase of our high-converting video productions, social campaigns, and commercial spots crafted for modern audiences.",
+	showHeading = true,
+	showSectionTitles = false,
+	showSeeMore = false,
+	seeMoreHref = "/portfolio",
+	seeMoreText = "See More...",
+} = Astro.props;
+
+const displaySections = limit ? sections.slice(0, limit) : sections;
+---
+
+<div class="w-full space-y-12 md:space-y-16">
+	{
+		showHeading && (
+			<div class="text-center max-w-2xl mx-auto space-y-3 px-4">
+				<h2 class="text-2xl md:text-3xl font-bold tracking-tight text-foreground">
+					{heading}
+				</h2>
+				{subheading && (
+					<p class="text-sm md:text-base text-muted-foreground font-normal leading-relaxed">
+						{subheading}
+					</p>
+				)}
+			</div>
+		)
+	}
+
+	<div class="space-y-16 md:space-y-20">
+		{
+			displaySections.map((section) => (
+				<section class="space-y-6 md:space-y-8" id={section.id}>
+					{showSectionTitles && (
+						<div class="text-center max-w-xl mx-auto space-y-1.5 px-4">
+							<h3 class="text-xl md:text-2xl font-semibold tracking-tight text-foreground">
+								{section.heading}
+							</h3>
+							<p class="text-xs md:text-sm text-muted-foreground font-normal">
+								{section.subheading}
+							</p>
+						</div>
+					)}
+
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 items-start">
+						<!-- Left Column -->
+						<div class="grid grid-cols-2 gap-2 md:gap-3">
+							{
+								section.leftVideos.map((video) => (
+									<div class={video.span}>
+										<VimeoEmbed videoId={video.id} title={video.title} aspect={video.aspect} />
+									</div>
+								))
+							}
+						</div>
+
+						<!-- Right Column -->
+						<div class="grid grid-cols-2 gap-2 md:gap-3">
+							{
+								section.rightVideos.map((video) => (
+									<div class={video.span}>
+										<VimeoEmbed videoId={video.id} title={video.title} aspect={video.aspect} />
+									</div>
+								))
+							}
+						</div>
+					</div>
+				</section>
+			))
+		}
+	</div>
+
+	{
+		showSeeMore && (
+			<div class="text-center pt-2 pb-6">
+				<a
+					href={seeMoreHref}
+					class="inline-flex items-center justify-center gap-2 text-sm font-medium tracking-wide text-muted-foreground hover:text-foreground transition-all duration-200 border-b border-border hover:border-foreground pb-1 group"
+				>
+					<span>{seeMoreText}</span>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="16"
+						height="16"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						class="transition-transform group-hover:translate-x-1"
+					>
+						<path d="M5 12h14"></path>
+						<path d="m12 5 7 7-7 7"></path>
+					</svg>
+				</a>
+			</div>
+		)
+	}
+</div>

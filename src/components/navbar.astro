@@ -1,6 +1,29 @@
 ---
 import { Image } from "astro:assets";
 import logo from "../assets/Moontajska_logo.png";
+
+const LINKS = [
+	{
+		id: 1,
+		text: "about",
+		href: "/about",
+	},
+	{
+		id: 1,
+		text: "portfolio",
+		href: "/portfolio",
+	},
+	{
+		id: 1,
+		text: "clients",
+		href: "/clients",
+	},
+	{
+		id: 1,
+		text: "contact",
+		href: "/contact",
+	},
+];
 ---
 
 <header class="bg-white sticky top-0 z-50">
@@ -18,29 +41,19 @@ import logo from "../assets/Moontajska_logo.png";
 		</div>
 		<nav class="flex items-center gap-8">
 			<div class="hidden md:flex items-center gap-4">
-				<a
-					href="/talents"
-					class="text-[0.85rem] font-light tracking-[2px] text-[#1a1a1a] transition-opacity hover:opacity-60"
-					>TALENTS</a
-				>
-				<span class="text-[0.85rem] text-[#666]">·</span>
-				<a
-					href="/clients"
-					class="text-[0.85rem] font-light tracking-[2px] text-[#1a1a1a] transition-opacity hover:opacity-60"
-					>CLIENTS</a
-				>
-				<span class="text-[0.85rem] text-[#666]">·</span>
-				<a
-					href="/pricing"
-					class="text-[0.85rem] font-light tracking-[2px] text-[#1a1a1a] transition-opacity hover:opacity-60"
-					>PRICING</a
-				>
-				<span class="text-[0.85rem] text-[#666]">·</span>
-				<a
-					href="/book-us"
-					class="text-[0.85rem] font-light tracking-[2px] text-[#1a1a1a] transition-opacity hover:opacity-60"
-					>BOOK US</a
-				>
+				{
+					LINKS.map((link, i) => {
+						return (
+							<a
+								href={link.href}
+								class="text-[0.85rem] font-light tracking-[2px] text-[#1a1a1a] transition-opacity hover:opacity-60 uppercase"
+							>
+								{link.text}
+							</a>
+						<span class="text-[0.85rem] text-[#666]">{i < 3 && "·"}</span>
+						);
+					})
+				}
 			</div>
 			<button
 				id="mobile-menu-btn"

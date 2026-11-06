@@ -1,0 +1,46 @@
+---
+import { Image } from "astro:assets";
+import img6 from "../assets/audience/Moontajska Deck FR 2025-6.png";
+import img7 from "../assets/audience/Moontajska Deck FR 2025-7.png";
+import img8 from "../assets/audience/Moontajska Deck FR 2025-8.png";
+import img9 from "../assets/audience/Moontajska Deck FR 2025-9.png";
+
+const audienceImages = [img6, img7, img8, img9];
+
+const groups = [
+	{
+		brand: "Boku",
+		images: audienceImages,
+	},
+	{
+		brand: "Sister's Republic",
+		images: audienceImages,
+	},
+];
+---
+
+<section class="w-full pt-10 pb-8 space-y-12">
+	<div class="border-t border-border pt-12 space-y-12">
+		{
+			groups.map((group) => (
+				<div class="space-y-4">
+					<h3 class="text-lg md:text-xl font-bold tracking-tight text-foreground px-1">
+						{group.brand}
+					</h3>
+
+					<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+						{group.images.map((img, index) => (
+							<div class="group relative flex items-center justify-center p-3 rounded-xl border border-border bg-card shadow-xs hover:border-primary/40 transition-all duration-200">
+								<Image
+									src={img}
+									alt={`${group.brand} audience comment ${index + 1}`}
+									class="w-full h-auto object-contain rounded-md"
+								/>
+							</div>
+						))}
+					</div>
+				</div>
+			))
+		}
+	</div>
+</section>

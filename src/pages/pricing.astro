@@ -1,13 +1,17 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { Image } from 'astro:assets';
-import pricingImg from '../assets/pricing-desktop.jpg';
+import Layout from "../layouts/layout.astro";
+import { Image } from "astro:assets";
+import pricingImg from "../assets/pricing-desktop.jpg";
 ---
 
 <Layout>
-	<main class="max-w-[1400px] mx-auto px-6 py-16 md:px-12 md:py-24 text-center">
+	<main class="max-w-350 mx-auto px-6 py-16 md:px-12 md:py-24 text-center">
 		<section class="flex justify-center">
-			<Image src={pricingImg} alt="Pricing Packages" class="w-full max-w-[1200px] h-auto object-contain" />
+			<Image
+				src={pricingImg}
+				alt="Pricing Packages"
+				class="w-full max-w-300 h-auto object-contain"
+			/>
 		</section>
 	</main>
 </Layout>

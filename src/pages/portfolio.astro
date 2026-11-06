@@ -1,0 +1,30 @@
+---
+import Layout from "../layouts/layout.astro";
+import PortfolioFilter from "../components/react/portfolio-filter.tsx";
+import TestimonialScreenshots from "../components/testimonial-screenshots.astro";
+---
+
+<Layout title="Portfolio">
+	<main class="w-full max-w-300 mx-auto px-4 py-8 md:px-8 md:py-16 space-y-12 md:space-y-16">
+		<!-- Top Heading & Description matching wireframe -->
+		<div class="text-center max-w-3xl mx-auto space-y-4 px-4">
+			<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-foreground">
+				Portfolio
+			</h1>
+			<div class="space-y-2 text-sm sm:text-base text-muted-foreground font-normal leading-relaxed">
+				<p>
+					We craft high-converting video ads, UGC formats, and commercial spots that capture attention in the first three seconds and drive real performance.
+				</p>
+				<p>
+					Browse our recent projects across health, beauty, tech, and fitness, or filter by category to discover how we help modern brands scale.
+				</p>
+			</div>
+		</div>
+
+		<!-- Interactive Filter Buttons & Video Grid -->
+		<PortfolioFilter client:load />
+
+		<!-- Bottom Testimonials: Facebook / Social Ad Comment Screenshots -->
+		<TestimonialScreenshots />
+	</main>
+</Layout>
