@@ -1,13 +1,41 @@
 ---
 import { Icon } from "astro-icon/components";
+
+const socialLinks = [
+	{
+		name: "Facebook",
+		href: "https://www.facebook.com/moontajska/",
+		icon: "fa6-brands:facebook-f",
+	},
+	{
+		name: "Instagram",
+		href: "https://www.instagram.com/moontajskaproductions/",
+		icon: "fa6-brands:instagram",
+	},
+	{
+		name: "YouTube",
+		href: "https://www.youtube.com/channel/UCcntF6BbZmUkTFdrJx8ZJWQ",
+		icon: "fa6-brands:youtube",
+	},
+	{
+		name: "LinkedIn",
+		href: "https://www.linkedin.com/in/krishna-bagadiya/",
+		icon: "fa6-brands:linkedin-in",
+	},
+	{
+		name: "Vimeo",
+		href: "http://vimeo.com/krishnabagadiya",
+		icon: "fa6-brands:vimeo-v",
+	},
+];
 ---
 
 <footer class="mt-20 py-10 flex flex-col items-center text-center space-y-6">
 	<div class="flex flex-col space-y-1">
 		<a
-			href="mailto:hello@moontajska.com"
+			href="mailto:business@moontajska.com"
 			class="text-xl font-light hover:opacity-70 transition-opacity"
-			>hello@moontajska.com</a
+			>business@moontajska.com</a
 		>
 		<a
 			href="tel:+33658485100"
@@ -16,42 +44,20 @@ import { Icon } from "astro-icon/components";
 		>
 	</div>
 
-	<div class="flex gap-4">
-		<a
-			href="https://www.facebook.com/moontajska/"
-			class="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
-			aria-label="Facebook"
-		>
-			<Icon name="fa6-brands:facebook-f" class="w-5 h-5" />
-		</a>
-		<a
-			href="https://www.instagram.com/moontajskaproductions/"
-			class="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
-			aria-label="Instagram"
-		>
-			<Icon name="fa6-brands:instagram" class="w-5 h-5" />
-		</a>
-		<a
-			href="https://www.youtube.com/channel/UCcntF6BbZmUkTFdrJx8ZJWQ"
-			class="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
-			aria-label="YouTube"
-		>
-			<Icon name="fa6-brands:youtube" class="w-5 h-5" />
-		</a>
-		<a
-			href="https://www.linkedin.com/in/krishna-bagadiya/"
-			class="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
-			aria-label="LinkedIn"
-		>
-			<Icon name="fa6-brands:linkedin-in" class="w-5 h-5" />
-		</a>
-		<a
-			href="http://vimeo.com/krishnabagadiya"
-			class="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
-			aria-label="Vimeo"
-		>
-			<Icon name="fa6-brands:vimeo-v" class="w-5 h-5" />
-		</a>
+	<div class="flex gap-3">
+		{
+			socialLinks.map((link) => (
+				<a
+					href={link.href}
+					target="_blank"
+					rel="noopener noreferrer"
+					class="w-8 h-8 bg-black text-white rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
+					aria-label={link.name}
+				>
+					<Icon name={link.icon} class="w-4 h-4" />
+				</a>
+			))
+		}
 	</div>
 
 	<a

@@ -3,11 +3,11 @@ import { Image } from "astro:assets";
 import logo from "../assets/Moontajska_logo.png";
 
 const LINKS = [
-	{
-		id: 1,
-		text: "about",
-		href: "/about",
-	},
+	// {
+	// 	id: 1,
+	// 	text: "about",
+	// 	href: "/about",
+	// },
 	{
 		id: 1,
 		text: "portfolio",
@@ -40,17 +40,16 @@ const LINKS = [
 			</a>
 		</div>
 		<nav class="flex items-center gap-8">
-			<div class="hidden md:flex items-center gap-4">
+			<div class="hidden md:flex items-center gap-6">
 				{
-					LINKS.map((link, i) => {
+					LINKS.map((link) => {
 						return (
 							<a
 								href={link.href}
-								class="text-[0.85rem] font-light tracking-[2px] text-[#1a1a1a] transition-opacity hover:opacity-60 uppercase"
+								class="text-sm font-light tracking-[2px] text-[#1a1a1a] transition-opacity hover:opacity-60 uppercase"
 							>
 								{link.text}
 							</a>
-						<span class="text-[0.85rem] text-[#666]">{i < 3 && "·"}</span>
 						);
 					})
 				}

@@ -31,33 +31,34 @@ type Brand = {
 	name: string;
 	logo: string;
 	alt: string;
+	class?: string;
 };
 
 const brands: Brand[] = [
-	{ name: "Boku", logo: "/logos/boku.png", alt: "Boku logo" },
-	{ name: "Urban Circus", logo: "/logos/urban-circus.svg", alt: "Urban Circus logo" },
-	{ name: "Lingoda", logo: "/logos/lingoda.png", alt: "Lingoda logo" },
-	{ name: "Livlab", logo: "/logos/livlab.svg", alt: "Livlab logo" },
-	{ name: "Sisters Republic", logo: "/logos/sisters-republic.png", alt: "Sisters Republic logo" },
-	{ name: "Saolar", logo: "/logos/saolar.png", alt: "Saolar logo" },
-	{ name: "Gymglish", logo: "/logos/gymglish.png", alt: "Gymglish logo" },
-	{ name: "Deep Belief", logo: "/logos/deep-belief.png", alt: "Deep Belief logo" },
-	{ name: "900.care", logo: "/logos/900.png", alt: "900.care logo" },
-	{ name: "Coiffissimo Professional", logo: "/logos/coiffissimo.png", alt: "Coiffissimo Professional logo" },
-	{ name: "Tutoroo", logo: "/logos/tutoroo.png", alt: "Tutoroo logo" },
-	{ name: "Mosaik", logo: "/logos/mosaik.svg", alt: "Mosaik logo" },
-	{ name: "Caats", logo: "/logos/caats.png", alt: "Caats logo" },
-	{ name: "Université Paris-Saclay", logo: "/logos/universite-paris-saclay.png", alt: "Université Paris-Saclay logo" },
-	{ name: "Pronounce", logo: "/logos/pronounce.png", alt: "Pronounce logo" },
-	{ name: "Kolsquare", logo: "/logos/kolsquare.png", alt: "Kolsquare logo" },
-	{ name: "Lilly Skin", logo: "/logos/lily-skin.png", alt: "Lilly Skin logo" },
-	{ name: "Western Union", logo: "/logos/western-union.png", alt: "Western Union logo" },
-	{ name: "Multilangues Formation", logo: "/logos/multilangues.png", alt: "Multilangues Formation logo" },
-	{ name: "La Bourse aux Livres", logo: "/logos/bourse.png", alt: "La Bourse aux Livres logo" },
+	{ name: "Boku", logo: "/logos/boku.png", alt: "Boku logo", class: "h-[20px] md:h-[22px] max-w-28 md:max-w-32" },
+	{ name: "Urban Circus", logo: "/logos/urban-circus.svg", alt: "Urban Circus logo", class: "h-[28px] md:h-[30px] max-w-32 md:max-w-36" },
+	{ name: "Lingoda", logo: "/logos/lingoda.png", alt: "Lingoda logo", class: "h-[28px] md:h-[30px] max-w-32 md:max-w-36" },
+	{ name: "Livlab", logo: "/logos/livlab.svg", alt: "Livlab logo", class: "h-[22px] md:h-[24px] max-w-28 md:max-w-32" },
+	{ name: "Sisters Republic", logo: "/logos/sisters-republic.png", alt: "Sisters Republic logo", class: "h-[36px] md:h-[40px] max-w-28 md:max-w-32" },
+	{ name: "Saolar", logo: "/logos/saolar.png", alt: "Saolar logo", class: "h-[24px] md:h-[26px] max-w-36 md:max-w-40" },
+	{ name: "Gymglish", logo: "/logos/gymglish.png", alt: "Gymglish logo", class: "h-[28px] md:h-[32px] max-w-32 md:max-w-36" },
+	{ name: "Deep Belief", logo: "/logos/deep-belief.png", alt: "Deep Belief logo", class: "h-[30px] md:h-[34px] max-w-40 md:max-w-44" },
+	{ name: "900.care", logo: "/logos/900.png", alt: "900.care logo", class: "h-[24px] md:h-[28px] max-w-24 md:max-w-28" },
+	{ name: "Coiffissimo Professional", logo: "/logos/coiffissimo.png", alt: "Coiffissimo Professional logo", class: "h-[28px] md:h-[32px] max-w-32 md:max-w-36" },
+	{ name: "Tutoroo", logo: "/logos/tutoroo.png", alt: "Tutoroo logo", class: "h-[28px] md:h-[30px] max-w-32 md:max-w-36" },
+	{ name: "Mosaik", logo: "/logos/mosaik.svg", alt: "Mosaik logo", class: "h-[22px] md:h-[24px] max-w-36 md:max-w-40" },
+	{ name: "Caats", logo: "/logos/caats.png", alt: "Caats logo", class: "h-[24px] md:h-[26px] max-w-28 md:max-w-32" },
+	{ name: "Université Paris-Saclay", logo: "/logos/universite-paris-saclay.png", alt: "Université Paris-Saclay logo", class: "h-[34px] md:h-[38px] max-w-32 md:max-w-36" },
+	{ name: "Pronounce", logo: "/logos/pronounce.png", alt: "Pronounce logo", class: "h-[24px] md:h-[26px] max-w-44 md:max-w-48" },
+	{ name: "Kolsquare", logo: "/logos/kolsquare.png", alt: "Kolsquare logo", class: "h-[28px] md:h-[30px] max-w-32 md:max-w-36" },
+	{ name: "Lilly Skin", logo: "/logos/lily-skin.png", alt: "Lilly Skin logo", class: "h-[36px] md:h-[40px] max-w-32 md:max-w-36" },
+	{ name: "Western Union", logo: "/logos/western-union.png", alt: "Western Union logo", class: "h-[22px] md:h-[24px] max-w-28 md:max-w-32" },
+	{ name: "Multilangues Formation", logo: "/logos/multilangues.png", alt: "Multilangues Formation logo", class: "h-[24px] md:h-[28px] max-w-36 md:max-w-40" },
+	{ name: "La Bourse aux Livres", logo: "/logos/bourse.png", alt: "La Bourse aux Livres logo", class: "h-[32px] md:h-[36px] max-w-32 md:max-w-36" },
 ];
 ---
 
-<section class="w-full py-10 md:py-14 space-y-12">
+<section class="w-full py-2 md:py-4">
 	<!-- Logos Slider / Marquee -->
 	<div class="space-y-4 text-center">
 		<p
@@ -86,12 +87,12 @@ const brands: Brand[] = [
 				{
 					// Duplicate twice for continuous seamless loop
 					[...brands, ...brands].map((brand) => (
-						<div class="flex items-center justify-center shrink-0 px-2 group opacity-75 hover:opacity-100 transition-opacity">
+						<div class="flex items-center justify-center shrink-0 h-10 md:h-12 px-2 group opacity-75 hover:opacity-100 transition-opacity">
 							<img
 								src={brand.logo}
 								alt={brand.alt}
 								loading="lazy"
-								class="h-7 md:h-8 max-w-32 md:max-w-40 w-auto object-contain dark:invert select-none pointer-events-none"
+								class={`w-auto object-contain dark:invert select-none pointer-events-none ${brand.class || "h-7 md:h-8 max-w-32 md:max-w-40"}`}
 							/>
 						</div>
 					))
