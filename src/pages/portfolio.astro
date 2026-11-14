@@ -2,7 +2,6 @@
 import Layout from "../layouts/layout.astro";
 import PortfolioFilter from "../components/react/portfolio-filter.tsx";
 import TestimonialScreenshots from "../components/testimonial-screenshots.astro";
-import ClientTestimonialsCarousel from "../components/react/client-testimonials-carousel.tsx";
 ---
 
 <Layout title="Portfolio">
@@ -27,8 +26,5 @@ import ClientTestimonialsCarousel from "../components/react/client-testimonials-
 
 		<!-- Bottom Testimonials: Facebook / Social Ad Comment Screenshots -->
 		<TestimonialScreenshots />
-
-		<!-- Client Testimonials Carousel -->
-		<ClientTestimonialsCarousel client:load />
 	</main>
 </Layout>

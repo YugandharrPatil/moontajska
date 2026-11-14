@@ -30,39 +30,41 @@ const socialLinks = [
 ];
 ---
 
-<footer class="mt-20 py-10 flex flex-col items-center text-center space-y-6">
-	<div class="flex flex-col space-y-1">
+<footer class="mt-20 py-12 flex flex-col items-center text-center space-y-7 sm:space-y-8">
+	<div class="flex flex-col space-y-1.5">
 		<a
-			href="mailto:business@moontajska.com"
-			class="text-xl font-light hover:opacity-70 transition-opacity"
-			>business@moontajska.com</a
+			href="mailto:hello@moontajska.com"
+			class="text-lg sm:text-xl font-light text-foreground hover:opacity-70 transition-opacity tracking-normal"
+			>hello@moontajska.com</a
 		>
 		<a
 			href="tel:+33658485100"
-			class="text-xl font-light hover:opacity-70 transition-opacity"
+			class="text-lg sm:text-xl font-light text-foreground hover:opacity-70 transition-opacity tracking-normal"
 			>+33 6 58 48 51 00</a
 		>
 	</div>
 
-	<div class="flex gap-3">
+	<div class="flex items-center justify-center gap-2.5 sm:gap-3">
 		{
 			socialLinks.map((link) => (
 				<a
 					href={link.href}
 					target="_blank"
 					rel="noopener noreferrer"
-					class="w-8 h-8 bg-black text-white rounded-full flex items-center justify-center hover:opacity-80 transition-opacity"
+					class="w-10 h-10 sm:w-11 sm:h-11 bg-black text-white rounded-full flex items-center justify-center hover:opacity-80 transition-opacity shadow-2xs"
 					aria-label={link.name}
 				>
-					<Icon name={link.icon} class="w-4 h-4" />
+					<Icon name={link.icon} class="w-5 h-5 sm:w-5.5 sm:h-5.5" />
 				</a>
 			))
 		}
 	</div>
 
-	<a
-		href="/mentions-legales"
-		class="text-sm text-gray-500 font-light mt-8 hover:text-black transition-colors"
-		>Mentions légales</a
-	>
+	<div>
+		<a
+			href="/mentions-legales"
+			class="text-sm sm:text-base text-foreground/80 font-light hover:text-foreground transition-colors"
+			>Mentions légales</a
+		>
+	</div>
 </footer>

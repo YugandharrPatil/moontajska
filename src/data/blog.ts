@@ -28,16 +28,16 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
 	{
 		id: "1",
-		title: "How a 3-Second Visual Hook Drove a +140% CTR Surge for 900.care",
-		image: "/blog/case-1.jpg",
-		videoId: "1011950908",
-		videoAspect: "portrait",
-		client: "900.care",
-		category: "Paid Social & Direct Response",
+		title: "From Scroll-Stop to Checkout: Sisters Republic's Viral Fairy Tale Campaign",
+		image: "/blog/linkedin-thumb-1.jpg",
+		videoId: "881686470",
+		videoAspect: "landscape",
+		client: "Sisters Republic",
+		category: "TikTok Ads & E-Commerce",
 		readTime: "4 min read",
 		date: "October 2026",
 		excerpt:
-			"Flipping consumer skepticism on its head in 3 seconds to slash cost-per-click and scale refillable personal care.",
+			"Flipping taboos and fairy tale tropes to create a viral sensation that exceeded all performance expectations.",
 		stats: [
 			{ value: "+140%", label: "CTR Increase" },
 			{ value: "-32%", label: "CAC Reduction" },
@@ -45,27 +45,27 @@ export const blogPosts: BlogPost[] = [
 		],
 		content: {
 			summary:
-				"Eco-friendly refillable personal care brands often struggle with repetitive 'save the planet' tropes that users tune out. By flipping consumer skepticism on its head within the first 3 seconds, we produced video formats that commanded attention and radically slashed cost-per-click.",
+				"In the crowded period-care category, consumer trust is everything. By subverting the classic Little Red Riding Hood story with comedic self-awareness and direct visual demonstrations, we broke advertising codes and created an unforgettable social campaign.",
 			challenge:
-				"900.care had achieved product-market fit with their refillable shower gels and deodorant sticks. However, customer acquisition costs on Meta and TikTok were creeping upwards as standard product showcases hit creative fatigue. They needed video creative that could stop rapid doom-scrolling and make the refill concept feel irresistibly intuitive in everyday life.",
+				"Sisters Republic wanted to capture market share on social platforms where audiences instantly sniff out staged testimonials. Traditional commercials failed to convert because viewers tuned out generic messaging and blue-liquid cliches.",
 			strategy: [
-				"Abandon conventional guilt-tripping sustainability messaging in favor of comedic everyday bathroom mishaps.",
-				"Script 8 distinct pattern-interrupt hooks using rapid visual contrasts and tactile product sound design.",
-				"Employ high-energy split-screen comparisons illustrating 1 tiny refill tablet dissolving versus carrying bulky plastic bottles.",
+				"Ditch blue liquids and sanitised language in favor of relatable cultural satire.",
+				"Script subversive character dynamics challenging puritanical taboos.",
+				"Highlight organic French manufacturing, all-day comfort, and 12-hour leak protection.",
 			],
 			creativeHook:
-				"Opening on an actor frantically balancing 14 giant plastic shampoo bottles that inevitably crash down, followed by a cut to slipping a 5-gram tablet into water with an ASMR pop sound effect.",
+				"Little Red Riding Hood meeting a wolf in the woods, only for the wolf to pitch corporate tampon tech—until a modern Sister steps in to showcase washable period undies.",
 			execution:
-				"We filmed across three stylized domestic settings using a hybrid production style: high-grade cinema glass for crisp product close-ups mixed with dynamic handheld camera work that feels native to TikTok and Instagram Reels. We delivered 16 modular variations for multivariate testing.",
+				"We filmed in a stylized forest setting with cinematic lighting, dynamic handheld angles, and witty banter, delivering an engaging narrative that felt like an entertaining sketch rather than a traditional ad.",
 			conclusion:
-				"When selling innovation, simplicity and unexpected humor triumph over heavy lecturing. By pinpointing the single most visual product feature—the dissolving tablet—and wrapping it in relatable chaos, 900.care unlocked their most efficient paid acquisition quarter to date.",
+				"When products challenge status-quo habits, entertainment and boldness triumph over dry lecturing. By giving genuine entertainment value to viewers, Sisters Republic built lasting brand recall and high conversion rates.",
 		},
 	},
 	{
 		id: "2",
-		title: "The Native UGC Formula That Reduced Boku's Customer Acquisition Cost by 38%",
-		image: "/blog/case-2.jpg",
-		videoId: "918612476",
+		title: "The Butt Dinner: The Viral Satirical Ad That Slashed Boku's CAC by 38%",
+		image: "/blog/linkedin-thumb-2.jpg",
+		videoId: "851884840",
 		videoAspect: "landscape",
 		client: "Boku",
 		category: "Creative Strategy & UGC",
@@ -89,25 +89,25 @@ export const blogPosts: BlogPost[] = [
 				"Emphasize tool-free, 10-minute installation through fast-paced time-lapse visual proof.",
 			],
 			creativeHook:
-				"A creator holding a jar of Nutella, smearing it on a plate, attempting to wipe it with dry paper towel, and asking: 'Would you eat off this plate now? So why do you trust dry paper with your butt?'",
+				"A dinner table setting where characters candidly debate everyday hygiene habits with deadpan humor, asking why anyone would wipe a dirty plate with dry paper.",
 			execution:
-				"We designed a multi-creator campaign featuring diverse living spaces—from compact Parisian student apartments to modern family bathrooms. Rapid transitions, on-screen dynamic typography, and natural room acoustics made each video feel like a friend's organic recommendation rather than an ad.",
+				"We crafted an absurd yet relatable dining scenario featuring sharp comedic pacing, rich color palettes, and natural sound design that stopped feeds and ignited lively comment section debates.",
 			conclusion:
 				"Direct, bold metaphors eliminate friction around taboo products. When creators address the real objections with warmth and comedic timing, customers feel empowered rather than self-conscious about taking action.",
 		},
 	},
 	{
 		id: "3",
-		title: "From Scroll-Stop to Checkout: Sisters Republic's 4.2x ROAS TikTok Blueprint",
-		image: "/blog/case-3.jpg",
-		videoId: "881686470",
+		title: "Ce en quoi nous croyons: The Viral Self-Hypnosis Campaign for Deep Belief",
+		image: "/blog/linkedin-thumb-3.jpg",
+		videoId: "769455742",
 		videoAspect: "landscape",
-		client: "Sisters Republic",
-		category: "TikTok Ads & E-Commerce",
-		readTime: "6 min read",
+		client: "Deep Belief",
+		category: "Wellbeing & Mindset",
+		readTime: "5 min read",
 		date: "August 2026",
 		excerpt:
-			"How transparent zero-leak absorbency tests and creator honesty produced a record-breaking 4.2x TikTok ROAS campaign.",
+			"How cinematic storytelling and subconscious reprogramming concepts unlocked viral engagement for self-hypnosis.",
 		stats: [
 			{ value: "4.2x", label: "Campaign ROAS" },
 			{ value: "+65%", label: "Conversion Rate" },
@@ -115,22 +115,23 @@ export const blogPosts: BlogPost[] = [
 		],
 		content: {
 			summary:
-				"In the crowded period-care category, consumer trust is everything. We engineered a high-velocity video framework based on transparent absorbency stress-tests, zero-leak demonstrations, and relatable day-in-the-life routines.",
+				"Communicating abstract concepts like mindset reprogramming and self-hypnosis demands arresting visual storytelling. We crafted a cinematic narrative exploring inner self-talk that captivated audiences across French social media.",
 			challenge:
-				"Sisters Republic wanted to capture market share on TikTok, where audiences demand extreme authenticity and instantly sniff out staged testimonials. Traditional beauty commercials failed to convert because viewers doubted real-world leak protection.",
+				"Mental wellbeing and self-hypnosis apps often struggle to visualize intangible benefits without feeling overly clinical or mystical. Deep Belief needed video creative that felt grounded, psychologically resonant, and immediately intriguing.",
 			strategy: [
-				"Create direct visual evidence: pouring measured liquid over the underwear in macro detail to display immediate absorption.",
-				"Address taboo comfort questions head-on: odor control, washing ease, and sport performance.",
-				"Integrate seamless CTA timing coordinated with TikTok sound trends and native text overlays.",
+				"Visualize psychological reflection and subconscious self-talk through symbolic mirror reflections and cinematic duality.",
+				"Lead with universal everyday doubts and self-sabotaging thought patterns.",
+				"Demonstrate guided auditory sessions as accessible, daily empowerment routines.",
 			],
 			creativeHook:
-				"A bold cut straight into pouring a cup of blue test liquid onto ultra-thin underwear while an authentic voiceover asks: 'Can 2mm of fabric really hold 4 tampons worth of fluid?'",
+				"A character confronting their own reflection as it talks back, illustrating how the beliefs we hold quietly shape our everyday reality.",
 			execution:
-				"Filming across athletic, work, and sleep scenarios, we paired aesthetic macro lighting with unvarnished honesty. Creators demonstrated washing the garments under a running tap to eliminate the friction of post-purchase maintenance.",
+				"Using atmospheric lighting, intimate close-ups, and immersive soundscapes, we captured emotional depth and subconscious tension, making self-hypnosis feel tangible, modern, and inspiring.",
 			conclusion:
-				"When products make bold performance promises, show, don't tell. Visually indisputable demonstrations combined with genuine creator advocacy build the bridge from casual viewer curiosity to immediate checkout confidence.",
+				"When selling personal transformation, emotion and cinematic immersion create connection. Grounding psychological insight in recognizable human moments drives genuine action.",
 		},
 	},
+	/*
 	{
 		id: "4",
 		title: "Gamified Video Formats: Scaling Lingoda's European Language Challenges",
@@ -166,4 +167,5 @@ export const blogPosts: BlogPost[] = [
 				"Gamifying the initial 5 seconds transforms passive consumers into active participants. When viewers interact with the content mentally before the pitch arrives, conversion barriers vanish.",
 		},
 	},
+	*/
 ];

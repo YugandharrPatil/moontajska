@@ -9,16 +9,15 @@ import {
   CarouselNext,
   type CarouselApi,
 } from "@/components/ui/carousel";
-import { Star, Quote, ChevronLeft, ChevronRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Star } from "lucide-react";
 
 interface Testimonial {
   quote: string;
   author: string;
-  role: string;
+  role?: string;
   company: string;
   logo?: string;
-  initials: string;
+  initials?: string;
 }
 
 const testimonials: Testimonial[] = [
@@ -148,42 +147,29 @@ export default function ClientTestimonialsCarousel() {
                 >
                   <div className="flex flex-col justify-between w-full p-6 sm:p-7 rounded-2xl bg-card border border-border shadow-xs hover:border-primary/30 hover:shadow-md transition-all duration-300">
                     <div className="space-y-4">
-                      {/* Rating stars & Quote icon */}
-                      <div className="flex items-center justify-between gap-2">
-                        <div
-                          className="flex items-center gap-1 text-amber-500"
-                          aria-label="5 out of 5 stars"
-                        >
-                          {[...Array(5)].map((_, i) => (
-                            <Star
-                              key={i}
-                              className="size-4 fill-amber-400 text-amber-400"
-                            />
-                          ))}
-                        </div>
-                        <Quote className="size-6 text-muted-foreground/20 rotate-180" />
+                      {/* Rating stars */}
+                      <div
+                        className="flex items-center justify-center gap-1 text-amber-500"
+                        aria-label="5 out of 5 stars"
+                      >
+                        {[...Array(5)].map((_, i) => (
+                          <Star
+                            key={i}
+                            className="size-4 fill-amber-400 text-amber-400"
+                          />
+                        ))}
                       </div>
 
                       {/* Testimonial Quote */}
-                      <p className="text-sm md:text-[0.9375rem] text-foreground/90 font-normal leading-relaxed italic">
+                      <p className="text-sm md:text-[0.9375rem] text-foreground/90 font-normal leading-relaxed italic text-center">
                         "{item.quote}"
                       </p>
                     </div>
 
-                    {/* Author, Role & Company Footer */}
-                    <div className="pt-5 mt-6 border-t border-border/70 flex items-center justify-between gap-3">
-                      <div className="flex items-center gap-3 min-w-0">
-                        <div className="size-9 rounded-full bg-muted border border-border flex items-center justify-center font-bold text-xs text-foreground shrink-0 select-none">
-                          {item.initials}
-                        </div>
-                        <div className="min-w-0">
-                          <div className="text-sm font-semibold text-foreground truncate">
-                            {item.author}
-                          </div>
-                          <div className="text-xs text-muted-foreground truncate">
-                            {item.role}, {item.company}
-                          </div>
-                        </div>
+                    {/* Author & Company Footer */}
+                    <div className="pt-5 mt-6 border-t border-border/70 flex items-center justify-between gap-3 min-h-[2.5rem]">
+                      <div className="text-sm font-semibold text-foreground truncate min-w-0">
+                        {item.author}
                       </div>
 
                       {item.logo ? (
@@ -209,48 +195,24 @@ export default function ClientTestimonialsCarousel() {
             <CarouselNext className="hidden md:flex -right-5 lg:-right-6 top-1/2 -translate-y-1/2 bg-background/90 backdrop-blur-xs border-border shadow-md hover:bg-muted size-9" />
           </Carousel>
 
-          {/* Centered navigation arrows and pagination dots */}
-          <div className="flex items-center justify-center gap-3 pt-6">
-            <Button
-              type="button"
-              variant="outline"
-              size="icon"
-              onClick={() => api?.scrollPrev()}
-              className="rounded-full size-8 sm:size-9 border-border bg-background hover:bg-muted text-foreground transition-all cursor-pointer shadow-2xs"
-              aria-label="Previous testimonial"
-            >
-              <ChevronLeft className="size-4" />
-            </Button>
-
-            {count > 1 && (
-              <div className="flex items-center gap-1.5 px-1">
-                {Array.from({ length: count }).map((_, idx) => (
-                  <button
-                    key={idx}
-                    type="button"
-                    onClick={() => api?.scrollTo(idx)}
-                    className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                      current === idx
-                        ? "w-6 bg-primary"
-                        : "w-2 bg-muted-foreground/30 hover:bg-muted-foreground/60"
-                    }`}
-                    aria-label={`Go to slide ${idx + 1}`}
-                  />
-                ))}
-              </div>
-            )}
-
-            <Button
-              type="button"
-              variant="outline"
-              size="icon"
-              onClick={() => api?.scrollNext()}
-              className="rounded-full size-8 sm:size-9 border-border bg-background hover:bg-muted text-foreground transition-all cursor-pointer shadow-2xs"
-              aria-label="Next testimonial"
-            >
-              <ChevronRight className="size-4" />
-            </Button>
-          </div>
+          {/* Carousel Pagination Dots */}
+          {count > 1 && (
+            <div className="flex justify-center items-center gap-1.5 pt-6">
+              {Array.from({ length: count }).map((_, idx) => (
+                <button
+                  key={idx}
+                  type="button"
+                  onClick={() => api?.scrollTo(idx)}
+                  className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
+                    current === idx
+                      ? "w-6 bg-primary"
+                      : "w-2 bg-muted-foreground/30 hover:bg-muted-foreground/60"
+                  }`}
+                  aria-label={`Go to slide ${idx + 1}`}
+                />
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </section>
