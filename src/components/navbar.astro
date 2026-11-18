@@ -10,26 +10,29 @@ const LINKS = [
 	// },
 	{
 		id: 1,
-		text: "portfolio",
-		href: "/portfolio",
+		text: "backstory",
+		href: "/backstory",
 	},
 	{
-		id: 1,
+		id: 2,
+		text: "videos",
+		href: "/videos",
+	},
+	{
+		id: 3,
 		text: "clients",
 		href: "/clients",
 	},
 	{
-		id: 1,
-		text: "contact",
-		href: "/contact",
+		id: 4,
+		text: "book a call",
+		href: "/book-us",
 	},
 ];
 ---
 
 <header class="bg-white sticky top-0 z-50">
-	<div
-		class="w-full max-w-300 mx-auto px-4 md:px-8 py-4 md:py-6 flex justify-between items-center relative"
-	>
+	<div class="w-full max-w-300 mx-auto px-4 md:px-8 py-4 md:py-6 flex justify-between items-center relative">
 		<div class="logo-container">
 			<a href="/">
 				<Image
@@ -39,20 +42,28 @@ const LINKS = [
 				/>
 			</a>
 		</div>
-		<nav class="flex items-center gap-8">
-			<div class="hidden md:flex items-center gap-6">
-				{
-					LINKS.map((link) => {
+		<nav class="flex items-center">
+			<div class="hidden md:flex items-center gap-24">
+				<div class="flex items-center gap-12">
+					{LINKS.filter((l) => l.href !== "/book-us").map((link) => {
 						return (
 							<a
 								href={link.href}
-								class="text-sm font-light tracking-[2px] text-[#1a1a1a] transition-opacity hover:opacity-60 uppercase"
+								class="text-base transition-opacity hover:opacity-60 font-jost"
 							>
 								{link.text}
 							</a>
 						);
-					})
-				}
+					})}
+				</div>
+				{LINKS.filter((l) => l.href === "/book-us").map((link) => (
+					<a
+						href={link.href}
+						class="text-base font-jost border border-black px-5 py-2 rounded-full transition-all hover:bg-black hover:text-white"
+					>
+						{link.text}
+					</a>
+				))}
 			</div>
 			<button
 				id="mobile-menu-btn"
@@ -79,26 +90,18 @@ const LINKS = [
 			id="mobile-menu"
 			class="hidden absolute top-full left-0 w-full bg-white flex-col items-center gap-6 py-8 shadow-xl border-t border-gray-100 md:hidden"
 		>
-			<a
-				href="/talents"
-				class="text-[0.85rem] font-light tracking-[2px] text-[#1a1a1a] transition-opacity hover:opacity-60"
-				>TALENTS</a
-			>
-			<a
-				href="/clients"
-				class="text-[0.85rem] font-light tracking-[2px] text-[#1a1a1a] transition-opacity hover:opacity-60"
-				>CLIENTS</a
-			>
-			<a
-				href="/pricing"
-				class="text-[0.85rem] font-light tracking-[2px] text-[#1a1a1a] transition-opacity hover:opacity-60"
-				>PRICING</a
-			>
-			<a
-				href="/book-us"
-				class="text-[0.85rem] font-light tracking-[2px] text-[#1a1a1a] transition-opacity hover:opacity-60"
-				>BOOK US</a
-			>
+			{LINKS.map((link) => (
+				<a
+					href={link.href}
+					class={
+						link.href === "/book-us"
+							? "text-sm font-jost border border-black px-6 py-2 rounded-full tracking-[1px] text-[#1a1a1a] transition-all hover:bg-black hover:text-white"
+							: "text-[0.85rem] font-light tracking-[2px] text-[#1a1a1a] transition-opacity hover:opacity-60"
+					}
+				>
+					{link.text}
+				</a>
+			))}
 		</div>
 	</div>
 </header>

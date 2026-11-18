@@ -7,6 +7,7 @@ export interface BlogPost {
 	id: string;
 	title: string;
 	image: string;
+	linkedinUrl: string;
 	videoId: string; // Vimeo video embed ID
 	videoAspect?: "landscape" | "portrait";
 	stats: [StatItem, StatItem, StatItem]; // 3 stats section
@@ -30,6 +31,7 @@ export const blogPosts: BlogPost[] = [
 		id: "1",
 		title: "From Scroll-Stop to Checkout: Sisters Republic's Viral Fairy Tale Campaign",
 		image: "/blog/linkedin-thumb-1.jpg",
+		linkedinUrl: "https://lnkd.in/p/eeiYABAB",
 		videoId: "881686470",
 		videoAspect: "landscape",
 		client: "Sisters Republic",
@@ -65,6 +67,7 @@ export const blogPosts: BlogPost[] = [
 		id: "2",
 		title: "The Butt Dinner: The Viral Satirical Ad That Slashed Boku's CAC by 38%",
 		image: "/blog/linkedin-thumb-2.jpg",
+		linkedinUrl: "https://lnkd.in/p/ezKKBdSk",
 		videoId: "851884840",
 		videoAspect: "landscape",
 		client: "Boku",
@@ -100,6 +103,7 @@ export const blogPosts: BlogPost[] = [
 		id: "3",
 		title: "Ce en quoi nous croyons: The Viral Self-Hypnosis Campaign for Deep Belief",
 		image: "/blog/linkedin-thumb-3.jpg",
+		linkedinUrl: "https://lnkd.in/p/e2cbPJVM",
 		videoId: "769455742",
 		videoAspect: "landscape",
 		client: "Deep Belief",

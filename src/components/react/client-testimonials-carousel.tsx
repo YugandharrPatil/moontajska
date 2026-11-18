@@ -9,7 +9,6 @@ import {
   CarouselNext,
   type CarouselApi,
 } from "@/components/ui/carousel";
-import { Star } from "lucide-react";
 
 interface Testimonial {
   quote: string;
@@ -118,72 +117,53 @@ export default function ClientTestimonialsCarousel() {
   }, [api]);
 
   return (
-    <section
-      aria-label="Client Testimonials"
-      className="w-full pt-10 pb-8 space-y-8 md:space-y-10"
-    >
-      <div className="border-t border-border pt-12 md:pt-16 space-y-8 md:space-y-10">
-        {/* Center-aligned heading matching Audience Comments style */}
-        <div className="text-center max-w-2xl mx-auto space-y-2 px-4">
-          <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-foreground">
-            Client Testimonials
-          </h2>
-        </div>
-
-        <div className="relative px-0 sm:px-1 md:px-0">
-          <Carousel
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-            setApi={setApi}
-            className="w-full"
-          >
+    <div className="relative px-0 sm:px-1 md:px-0">
+      <Carousel
+        opts={{
+          align: "start",
+          loop: true,
+        }}
+        setApi={setApi}
+        className="w-full"
+      >
             <CarouselContent className="-ml-4 py-2">
               {testimonials.map((item, index) => (
                 <CarouselItem
                   key={`${item.author}-${index}`}
                   className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3 flex"
                 >
-                  <div className="flex flex-col justify-between w-full p-6 sm:p-7 rounded-2xl bg-card border border-border shadow-xs hover:border-primary/30 hover:shadow-md transition-all duration-300">
-                    <div className="space-y-4">
-                      {/* Rating stars */}
-                      <div
-                        className="flex items-center justify-center gap-1 text-amber-500"
-                        aria-label="5 out of 5 stars"
-                      >
-                        {[...Array(5)].map((_, i) => (
-                          <Star
-                            key={i}
-                            className="size-4 fill-amber-400 text-amber-400"
+                  <div className="flex flex-col justify-between w-full p-6 sm:p-7 rounded-2xl bg-white border border-border/80 shadow-xs hover:border-black/30 hover:shadow-md transition-all duration-300 text-left">
+                    <div className="space-y-5">
+                      {/* Brand Logo / Brand Text */}
+                      <div className="flex items-center min-h-[30px]">
+                        {item.logo ? (
+                          <img
+                            src={item.logo}
+                            alt={`${item.company} logo`}
+                            loading="lazy"
+                            className="h-6 max-w-28 object-contain object-left select-none pointer-events-none"
                           />
-                        ))}
+                        ) : (
+                          <span className="text-lg font-black tracking-tight text-black uppercase">
+                            {item.company}
+                          </span>
+                        )}
                       </div>
 
                       {/* Testimonial Quote */}
-                      <p className="text-sm md:text-[0.9375rem] text-foreground/90 font-normal leading-relaxed italic text-center">
-                        "{item.quote}"
+                      <p className="text-sm sm:text-[0.9375rem] text-[#1a1a1a] font-normal leading-relaxed text-left">
+                        {item.quote}
                       </p>
                     </div>
 
-                    {/* Author & Company Footer */}
-                    <div className="pt-5 mt-6 border-t border-border/70 flex items-center justify-between gap-3 min-h-[2.5rem]">
-                      <div className="text-sm font-semibold text-foreground truncate min-w-0">
+                    {/* Author & Role (Left-aligned, clean stack) */}
+                    <div className="pt-6 mt-6">
+                      <div className="text-sm font-bold text-foreground">
                         {item.author}
                       </div>
-
-                      {item.logo ? (
-                        <img
-                          src={item.logo}
-                          alt={`${item.company} logo`}
-                          loading="lazy"
-                          className="h-5 max-w-20 object-contain dark:invert opacity-80 hover:opacity-100 transition-opacity select-none shrink-0"
-                        />
-                      ) : (
-                        <span className="text-[0.7rem] font-medium px-2 py-0.5 rounded bg-muted text-muted-foreground border border-border/80 shrink-0">
-                          {item.company}
-                        </span>
-                      )}
+                      <div className="text-xs font-medium text-muted-foreground mt-0.5">
+                        {item.role ? `${item.role}, ${item.company}` : item.company}
+                      </div>
                     </div>
                   </div>
                 </CarouselItem>
@@ -214,7 +194,5 @@ export default function ClientTestimonialsCarousel() {
             </div>
           )}
         </div>
-      </div>
-    </section>
   );
 }
