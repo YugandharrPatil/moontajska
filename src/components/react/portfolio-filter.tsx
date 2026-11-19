@@ -180,7 +180,7 @@ export default function PortfolioFilter() {
               variant="ghost"
               size="default"
               onClick={() => handleCategoryChange(category)}
-              className={`rounded-full px-4 text-xs md:text-sm font-medium transition-all ${
+              className={`rounded-full px-4 text-xs md:text-sm font-jost font-medium lowercase transition-all ${
                 isActive
                   ? "bg-muted text-foreground font-semibold"
                   : "text-muted-foreground hover:text-foreground"
@@ -239,18 +239,16 @@ export default function PortfolioFilter() {
         )}
       </div>
 
-      {/* See More Button (keeps going until we reach the end) */}
+      {/* + de vidéos Button (keeps going until we reach the end) */}
       {!hasReachedEnd && (
         <div className="flex justify-center pt-2 pb-4">
-          <Button
-            variant="outline"
-            size="lg"
+          <button
+            type="button"
             onClick={handleSeeMore}
-            className="rounded-full px-7 py-2.5 text-xs md:text-sm font-medium tracking-wide border-border/80 bg-background hover:bg-muted text-foreground transition-all shadow-xs flex items-center gap-2 group cursor-pointer"
+            className="inline-block text-base font-jost border border-black px-6 py-2 rounded-full transition-all hover:bg-black hover:text-white cursor-pointer"
           >
-            <span>See More</span>
-            <ChevronDown className="w-4 h-4 text-muted-foreground group-hover:text-foreground group-hover:translate-y-0.5 transition-transform" />
-          </Button>
+            + de vidéos
+          </button>
         </div>
       )}
     </div>

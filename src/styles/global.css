@@ -164,9 +164,62 @@
 .animate-marquee {
 	display: flex;
 	width: max-content;
-	animation: marquee 45s linear infinite;
+	animation: marquee 100s linear infinite;
 }
 
 .animate-marquee:hover {
 	animation-play-state: paused;
+}
+
+.section-header {
+	text-align: center;
+	max-width: 64rem;
+	/* max-w-5xl */
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+}
+
+.section-header p+p {
+	margin-top: -0.5rem;
+}
+
+.section-header h1 {
+	font-family: var(--font-newsreader);
+	font-weight: 700;
+	color: var(--foreground);
+	font-size: 1.875rem;
+	/* text-3xl */
+	line-height: 2.25rem;
+}
+
+@media (min-width: 768px) {
+
+	.section-header h1,
+	.section-header h2 {
+		font-size: 1.875rem;
+		/* md:text-3xl */
+		line-height: 2.25rem;
+	}
+}
+
+.section-header p {
+	font-family: var(--font-jost);
+	font-weight: 500;
+	color: var(--muted-foreground);
+	font-size: 1rem;
+	/* text-base */
+	line-height: 1.25;
+}
+
+@media (min-width: 768px) {
+	.section-header p {
+		font-size: 1.25rem;
+		/* md:text-xl */
+		line-height: 1.35;
+	}
 }

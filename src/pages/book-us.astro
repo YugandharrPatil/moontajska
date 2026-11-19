@@ -4,38 +4,29 @@ import { Image } from "astro:assets";
 import contactImg from "../assets/Contact-icon-300x221.jpg";
 import BookUsForm from "../components/react/contact-form";
 import CalEmbed from "../components/react/cal-embed";
+import SectionHeader from "@/components/section-header.astro";
 
 const calLink = import.meta.env.PUBLIC_CAL_LINK || "moontajska/30min";
 ---
 
 <Layout title="Book Us – Contact & Scheduling">
 	<main class="max-w-[1400px] mx-auto px-6 py-16 md:px-12 md:py-24 text-center">
-		<h1 class="text-4xl md:text-5xl font-light tracking-wide mb-4">Book Us</h1>
-		<p class="text-gray-600 text-lg max-w-2xl mx-auto mb-16 leading-relaxed font-light">
-			Schedule a 30-minute discovery call directly on our calendar, or leave us a message to discuss your next video production.
-		</p>
-
-		<!-- Cal.com 30-Minute Meeting Embed Section -->
 		<section class="mb-24 flex flex-col items-center">
-			<div class="text-center mb-8 max-w-xl">
-				<div class="inline-flex items-center gap-2 px-3 py-1 mb-3 rounded-full bg-black/5 text-gray-800 text-xs font-medium uppercase tracking-wider">
-					Instant Booking
-				</div>
-				<h2 class="text-2xl md:text-3xl font-light text-gray-900 mb-2">
-					Schedule a 30-Minute Call
-				</h2>
-				<p class="text-gray-500 text-sm">
-					Pick a date and time that suits you. A Google Meet / video link will be automatically generated.
-				</p>
-			</div>
+			<SectionHeader>
+				<h1>Book a Call, 30-Minute meeting</h1>
+				<!-- <p>
+					Pick a date and time that suits you. A Google Meet / video link will
+					be automatically generated.
+				</p> -->
+			</SectionHeader>
 
-			<div class="w-full max-w-[1050px] mx-auto">
+			<div class="w-full max-w-5xl mx-auto mt-12">
 				<CalEmbed client:load calLink={calLink} />
 			</div>
 		</section>
 
 		<!-- Written Inquiry / Contact Form Section -->
-		<section id="send-message" class="flex flex-col items-center">
+		<!-- <section id="send-message" class="flex flex-col items-center">
 			<div class="text-center mb-8 max-w-xl">
 				<div class="inline-flex items-center gap-2 px-3 py-1 mb-3 rounded-full bg-black/5 text-gray-800 text-xs font-medium uppercase tracking-wider">
 					Direct Message
@@ -89,6 +80,6 @@ const calLink = import.meta.env.PUBLIC_CAL_LINK || "moontajska/30min";
 					<BookUsForm client:load />
 				</div>
 			</div>
-		</section>
+		</section> -->
 	</main>
 </Layout>

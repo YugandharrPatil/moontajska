@@ -25,11 +25,18 @@ const {
 const displaySections = limit ? sections.slice(0, limit) : sections;
 ---
 
-<div class="w-full space-y-12 md:space-y-16">
-	<SectionHeader
-		heading="des vidéos humouristiques, cinématographiques et publicitaires"
-		subheading="100% de clients satisfaits, +400 entreprises accompagnées et des vidéos qui apportent vraiment des résultats."
-	/>
+<div class="w-full space-y-6 md:space-y-8 pt-6 md:pt-12">
+	<SectionHeader>
+		<h1>des vidéos humouristiques, cinématographiques et publicitaires</h1>
+		<p>
+			100% de clients satisfaits, +400 entreprises accompagnées et des vidéos
+			qui apportent vraiment des résultats.
+		</p>
+		<p>
+			100% de clients satisfaits, +400 entreprises accompagnées et des vidéos
+			qui apportent vraiment des résultats.
+		</p>
+	</SectionHeader>
 
 	<div class="space-y-16 md:space-y-20">
 		{displaySections.map((section) => (
@@ -76,7 +83,7 @@ const displaySections = limit ? sections.slice(0, limit) : sections;
 		))}
 	</div>
 	{showSeeMore && (
-		<div class="text-center pt-2 pb-6">
+		<div class="text-center pt-0 pb-4">
 			<a
 				href="/videos"
 				class="inline-block text-base font-jost border border-black px-6 py-2 rounded-full transition-all hover:bg-black hover:text-white"

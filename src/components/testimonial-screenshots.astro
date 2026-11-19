@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import SectionHeader from "./section-header.astro";
 
 // Audience comment screenshots
 import imgDeck from "../assets/audience/Moontajska Deck FR 2025.png";
@@ -35,68 +36,58 @@ const row3Track = [...row3Items, ...row3Items];
 ---
 
 <section class="w-full pt-10 pb-8 space-y-8 md:space-y-10">
-	<div class="border-t border-border pt-12 md:pt-16 space-y-8 md:space-y-10">
-		<div class="text-center max-w-2xl mx-auto space-y-2 px-4">
-			<h2 class="text-2xl md:text-3xl font-bold tracking-tight text-foreground">
-				Audience Comments
-			</h2>
-		</div>
+	<div class="pt-12 md:pt-16 space-y-8 md:space-y-10">
+		<SectionHeader>
+			<h1>le public en parlent</h1>
+			<p>
+				100% de clients satisfaits, +400 entreprises accompagnées et des vidéos
+				qui apportent vraiment des résultats.
+			</p>
+		</SectionHeader>
 
 		<!-- 3-row infinite slider in alternate directions -->
 		<div class="relative w-full overflow-hidden py-2 space-y-4 sm:space-y-5">
 			<!-- Fade edge masks -->
-			<div
-				class="pointer-events-none absolute inset-y-0 left-0 w-12 sm:w-20 md:w-32 bg-gradient-to-r from-[#f8f9fa] to-transparent z-10"
-			>
-			</div>
-			<div
-				class="pointer-events-none absolute inset-y-0 right-0 w-12 sm:w-20 md:w-32 bg-gradient-to-l from-[#f8f9fa] to-transparent z-10"
-			>
-			</div>
+			<div class="pointer-events-none absolute inset-y-0 left-0 w-12 sm:w-20 md:w-32 bg-gradient-to-r from-white to-transparent z-10"></div>
+			<div class="pointer-events-none absolute inset-y-0 right-0 w-12 sm:w-20 md:w-32 bg-gradient-to-l from-white to-transparent z-10"></div>
 
 			<!-- Row 1: sliding right -->
 			<div class="marquee-track-row1 flex items-center">
-				{
-					row1Track.map((img, idx) => (
-						<div class="shrink-0 flex items-center justify-center h-28 sm:h-32 md:h-36 p-2.5 sm:p-3 rounded-xl md:rounded-2xl border border-border bg-card shadow-xs hover:border-primary/40 hover:shadow-md transition-all duration-200 mr-4 sm:mr-5">
-							<Image
-								src={img}
-								alt={`Audience comment ${idx + 1}`}
-								class="h-full w-auto max-w-none object-contain rounded-lg select-none pointer-events-none"
-							/>
-						</div>
-					))
-				}
+				{row1Track.map((img, idx) => (
+					<div class="shrink-0 flex items-center justify-center h-28 sm:h-32 md:h-36 p-2.5 sm:p-3 rounded-xl md:rounded-2xl border border-border bg-card shadow-xs hover:border-primary/40 hover:shadow-md transition-all duration-200 mr-4 sm:mr-5">
+						<Image
+							src={img}
+							alt={`Audience comment ${idx + 1}`}
+							class="h-full w-auto max-w-none object-contain rounded-lg select-none pointer-events-none"
+						/>
+					</div>
+				))}
 			</div>
 
 			<!-- Row 2: sliding left -->
 			<div class="marquee-track-row2 flex items-center">
-				{
-					row2Track.map((img, idx) => (
-						<div class="shrink-0 flex items-center justify-center h-28 sm:h-32 md:h-36 p-2.5 sm:p-3 rounded-xl md:rounded-2xl border border-border bg-card shadow-xs hover:border-primary/40 hover:shadow-md transition-all duration-200 mr-4 sm:mr-5">
-							<Image
-								src={img}
-								alt={`Audience comment ${idx + 1}`}
-								class="h-full w-auto max-w-none object-contain rounded-lg select-none pointer-events-none"
-							/>
-						</div>
-					))
-				}
+				{row2Track.map((img, idx) => (
+					<div class="shrink-0 flex items-center justify-center h-28 sm:h-32 md:h-36 p-2.5 sm:p-3 rounded-xl md:rounded-2xl border border-border bg-card shadow-xs hover:border-primary/40 hover:shadow-md transition-all duration-200 mr-4 sm:mr-5">
+						<Image
+							src={img}
+							alt={`Audience comment ${idx + 1}`}
+							class="h-full w-auto max-w-none object-contain rounded-lg select-none pointer-events-none"
+						/>
+					</div>
+				))}
 			</div>
 
 			<!-- Row 3: sliding right -->
 			<div class="marquee-track-row3 flex items-center">
-				{
-					row3Track.map((img, idx) => (
-						<div class="shrink-0 flex items-center justify-center h-28 sm:h-32 md:h-36 p-2.5 sm:p-3 rounded-xl md:rounded-2xl border border-border bg-card shadow-xs hover:border-primary/40 hover:shadow-md transition-all duration-200 mr-4 sm:mr-5">
-							<Image
-								src={img}
-								alt={`Audience comment ${idx + 1}`}
-								class="h-full w-auto max-w-none object-contain rounded-lg select-none pointer-events-none"
-							/>
-						</div>
-					))
-				}
+				{row3Track.map((img, idx) => (
+					<div class="shrink-0 flex items-center justify-center h-28 sm:h-32 md:h-36 p-2.5 sm:p-3 rounded-xl md:rounded-2xl border border-border bg-card shadow-xs hover:border-primary/40 hover:shadow-md transition-all duration-200 mr-4 sm:mr-5">
+						<Image
+							src={img}
+							alt={`Audience comment ${idx + 1}`}
+							class="h-full w-auto max-w-none object-contain rounded-lg select-none pointer-events-none"
+						/>
+					</div>
+				))}
 			</div>
 		</div>
 	</div>
