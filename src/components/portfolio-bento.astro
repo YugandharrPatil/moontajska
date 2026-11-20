@@ -1,6 +1,6 @@
 ---
 import VimeoEmbed from "./vimeo-embed.astro";
-import SectionHeader from "./section-header.astro";
+import SectionHeading from "./section-heading.astro";
 import { portfolioSections, type BentoSection } from "../data/portfolio";
 
 export interface Props {
@@ -26,7 +26,7 @@ const displaySections = limit ? sections.slice(0, limit) : sections;
 ---
 
 <div class="w-full space-y-6 md:space-y-8 pt-6 md:pt-12">
-	<SectionHeader>
+	<SectionHeading>
 		<h1>des vidéos humouristiques, cinématographiques et publicitaires</h1>
 		<p>
 			100% de clients satisfaits, +400 entreprises accompagnées et des vidéos
@@ -36,7 +36,7 @@ const displaySections = limit ? sections.slice(0, limit) : sections;
 			100% de clients satisfaits, +400 entreprises accompagnées et des vidéos
 			qui apportent vraiment des résultats.
 		</p>
-	</SectionHeader>
+	</SectionHeading>
 
 	<div class="space-y-16 md:space-y-20">
 		{displaySections.map((section) => (

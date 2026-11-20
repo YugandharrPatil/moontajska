@@ -1,18 +1,21 @@
 ---
 import Layout from "../layouts/layout.astro";
 import Hero from "../components/hero.astro";
-import SectionHeader from "../components/section-header.astro";
-import TestimonialsSlider from "../components/testimonials-slider.astro";
+import SectionHeader from "../components/section-heading.astro";
+import LogoSlider from "../components/logo-slider.astro";
 import PortfolioBento from "../components/portfolio-bento.astro";
 import ClientTestimonialsGrid from "../components/client-testimonials-grid.astro";
+import CalEmbed from "../components/react/cal-embed";
 import { blogPosts } from "../data/blog";
+
+const calLink = import.meta.env.PUBLIC_CAL_LINK || "moontajska/30min";
 ---
 
 <Layout>
 	<main class="w-full max-w-300 mx-auto px-4 pt-2 pb-8 md:px-8 md:pt-4 md:pb-12 space-y-6 md:space-y-8">
 		<Hero />
 
-		<TestimonialsSlider />
+		<LogoSlider />
 
 		<PortfolioBento
 			limit={1}
@@ -22,7 +25,7 @@ import { blogPosts } from "../data/blog";
 		/>
 
 		<!-- Client Testimonials Grid -->
-		<section class="w-full pt-10 pb-8 space-y-8 md:space-y-10">
+		<section id="clients" class="w-full pt-10 pb-8 space-y-8 md:space-y-10 scroll-mt-24">
 			<SectionHeader>
 				<h1>des clients en parlent</h1>
 				<p>
@@ -81,6 +84,17 @@ import { blogPosts } from "../data/blog";
 						</div>
 					</a>
 				))}
+			</div>
+		</section>
+
+		<!-- Book a Call Section -->
+		<section id="book-us" class="w-full pt-10 pb-8 flex flex-col items-center scroll-mt-24">
+			<SectionHeader>
+				<h1>book a call, 30-minute meeting</h1>
+			</SectionHeader>
+
+			<div class="w-full max-w-5xl mx-auto mt-10">
+				<CalEmbed client:load calLink={calLink} />
 			</div>
 		</section>
 	</main>

@@ -1,25 +1,27 @@
 ---
 import Layout from "../layouts/layout.astro";
-import SectionHeader from "../components/section-header.astro";
+import SectionHeading from "../components/section-heading.astro";
 import PortfolioFilter from "../components/react/portfolio-filter.tsx";
 import TestimonialScreenshots from "../components/testimonial-screenshots.astro";
 ---
 
 <Layout title="Portfolio">
-	<main class="w-full max-w-300 mx-auto px-4 py-8 md:px-8 md:py-16 space-y-12 md:space-y-16">
+	<main class="w-full max-w-300 mx-auto px-4 pt-8 pb-0 md:px-8 md:pt-16 md:pb-0 space-y-6 md:space-y-8">
 		<!-- Section Header -->
-		<SectionHeader>
+		<SectionHeading>
 			<h1>des pubs humouristiques et cinématographiques</h1>
 			<p>
 				100% de clients satisfaits, +400 entreprises accompagnées et des vidéos
 				qui apportent vraiment des résultats.
 			</p>
-		</SectionHeader>
+		</SectionHeading>
 
 		<!-- Interactive Filter Buttons & Video Grid -->
 		<PortfolioFilter client:load />
 
 		<!-- Bottom Testimonials: Facebook / Social Ad Comment Screenshots -->
-		<TestimonialScreenshots />
+		<div class="pt-6 md:pt-8">
+			<TestimonialScreenshots />
+		</div>
 	</main>
 </Layout>

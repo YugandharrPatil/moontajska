@@ -128,60 +128,52 @@ export default function ClientTestimonialsCarousel() {
         className="w-full"
       >
         <CarouselContent className="-ml-4 py-2 items-stretch">
-          {testimonials.map((item, index) => {
-            // Target exact 3 lines of text: calculate width so all cards have identical 3-line quote height
-            // ~60 characters per line = ~180 chars in 360px width.
-            const textLen = item.quote.length;
-            const targetWidthPx = Math.max(340, Math.round(textLen * 3.8));
-
-            return (
-              <CarouselItem
-                key={`${item.author}-${index}`}
-                style={{ flexBasis: `${targetWidthPx}px` }}
-                className="pl-4 shrink-0 flex-none max-w-[92vw] flex"
-              >
-                <div className="flex flex-col justify-start w-full h-[215px] p-6 rounded-2xl bg-white border border-border/80 shadow-xs hover:border-black/30 hover:shadow-md transition-all duration-300 text-left">
-                  <div className="space-y-3">
-                    {/* Brand Logo / Brand Text */}
-                    <div className="flex items-center min-h-[30px]">
-                      {item.logo ? (
-                        <img
-                          src={item.logo}
-                          alt={`${item.company} logo`}
-                          loading="lazy"
-                          className="h-6 max-w-28 object-contain object-left select-none pointer-events-none"
-                        />
-                      ) : (
-                        <span className="text-lg font-black tracking-tight text-black uppercase">
-                          {item.company}
-                        </span>
-                      )}
-                    </div>
-
-                    {/* Testimonial Quote */}
-                    <p className="text-sm sm:text-sm text-foreground font-normal leading-relaxed text-justify">
-                      {item.quote}
-                    </p>
+          {testimonials.map((item, index) => (
+            <CarouselItem
+              key={`${item.author}-${index}`}
+              className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3 flex shrink-0"
+            >
+              <div className="flex flex-col justify-between w-full p-6 rounded-2xl bg-white border border-border/80 shadow-xs hover:border-black/30 hover:shadow-md transition-all duration-300 text-left">
+                <div className="space-y-4">
+                  {/* Brand Logo / Brand Text */}
+                  <div className="flex items-center min-h-[30px]">
+                    {item.logo ? (
+                      <img
+                        src={item.logo}
+                        alt={`${item.company} logo`}
+                        loading="lazy"
+                        className="h-6 max-w-28 object-contain object-left select-none pointer-events-none"
+                      />
+                    ) : (
+                      <span className="text-lg font-black tracking-tight text-black uppercase">
+                        {item.company}
+                      </span>
+                    )}
                   </div>
 
-                  {/* Author & Role (Clear top padding and consistent position) */}
-                  <div className="pt-4 mt-auto">
-                    <div className="text-sm font-semibold text-foreground">
-                      {item.author}
-                    </div>
-                    <div className="text-sm font-medium text-muted-foreground mt-0.5">
-                      {item.role ? `${item.role}, ${item.company}` : item.company}
-                    </div>
+                  {/* Testimonial Quote */}
+                  <p className="text-sm sm:text-sm text-foreground font-normal leading-relaxed text-justify">
+                    {item.quote}
+                  </p>
+                </div>
+
+                {/* Author & Role */}
+                <div className="pt-4 mt-auto">
+                  <div className="text-sm font-semibold text-foreground">
+                    {item.author}
+                  </div>
+                  <div className="text-sm font-medium text-muted-foreground mt-0.5">
+                    {item.role}
                   </div>
                 </div>
-              </CarouselItem>
-            );
-          })}
+              </div>
+            </CarouselItem>
+          ))}
         </CarouselContent>
 
         {/* Side arrow buttons perfectly centered vertically on cards */}
-        <CarouselPrevious className="flex -left-4 md:-left-5 lg:-left-6 top-[107px] -translate-y-1/2 bg-background/95 backdrop-blur-xs border-border shadow-md hover:bg-muted size-9" />
-        <CarouselNext className="flex -right-4 md:-right-5 lg:-right-6 top-[107px] -translate-y-1/2 bg-background/95 backdrop-blur-xs border-border shadow-md hover:bg-muted size-9" />
+        <CarouselPrevious className="flex -left-4 md:-left-5 lg:-left-6 !top-1/2 -translate-y-1/2 inset-y-auto bg-background/95 backdrop-blur-xs border-border shadow-md hover:bg-muted size-9" />
+        <CarouselNext className="flex -right-4 md:-right-5 lg:-right-6 !top-1/2 -translate-y-1/2 inset-y-auto bg-background/95 backdrop-blur-xs border-border shadow-md hover:bg-muted size-9" />
       </Carousel>
 
           {/* Carousel Pagination Dots */}

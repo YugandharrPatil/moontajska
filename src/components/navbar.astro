@@ -21,12 +21,12 @@ const LINKS = [
 	{
 		id: 3,
 		text: "clients",
-		href: "/clients",
+		href: "/#clients",
 	},
 	{
 		id: 4,
 		text: "book a call",
-		href: "/book-us",
+		href: "/#book-us",
 	},
 ];
 ---
@@ -45,7 +45,7 @@ const LINKS = [
 		<nav class="flex items-center">
 			<div class="hidden md:flex items-center gap-24">
 				<div class="flex items-center gap-10">
-					{LINKS.filter((l) => l.href !== "/book-us").map((link) => {
+					{LINKS.filter((l) => l.href !== "/#book-us").map((link) => {
 						return (
 							<a
 								href={link.href}
@@ -56,7 +56,7 @@ const LINKS = [
 						);
 					})}
 				</div>
-				{LINKS.filter((l) => l.href === "/book-us").map((link) => (
+				{LINKS.filter((l) => l.href === "/#book-us").map((link) => (
 					<a
 						href={link.href}
 						class="text-base font-jost border border-black px-5 py-2 rounded-full transition-all hover:bg-black hover:text-white"
@@ -94,7 +94,7 @@ const LINKS = [
 				<a
 					href={link.href}
 					class={
-						link.href === "/book-us"
+						link.href === "/#book-us"
 							? "text-sm font-jost border border-black px-6 py-2 rounded-full tracking-[1px] text-[#1a1a1a] transition-all hover:bg-black hover:text-white"
 							: "text-[0.85rem] font-light tracking-[2px] text-[#1a1a1a] transition-opacity hover:opacity-60"
 					}

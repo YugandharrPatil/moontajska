@@ -168,7 +168,7 @@ export default function PortfolioFilter() {
   const hasReachedEnd = totalHeight > 0 && currentLimit >= totalHeight - 20;
 
   return (
-    <div className="w-full space-y-8 md:space-y-10">
+    <div className="w-full space-y-8 md:space-y-6">
       {/* Category Filter Buttons */}
       <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3">
         {CATEGORIES.map((category) => {
