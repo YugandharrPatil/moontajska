@@ -2,7 +2,7 @@
 import Layout from "../layouts/layout.astro";
 import SectionHeading from "../components/section-heading.astro";
 import PortfolioFilter from "../components/react/portfolio-filter.tsx";
-import TestimonialScreenshots from "../components/testimonial-screenshots.astro";
+import AudienceComments from "../components/audience-comments.astro";
 ---
 
 <Layout title="Portfolio">
@@ -10,18 +10,16 @@ import TestimonialScreenshots from "../components/testimonial-screenshots.astro"
 		<!-- Section Header -->
 		<SectionHeading>
 			<h1>des pubs humouristiques et cinématographiques</h1>
-			<p>
-				100% de clients satisfaits, +400 entreprises accompagnées et des vidéos
-				qui apportent vraiment des résultats.
+			<p class="!font-normal">
+				des vidéos que les gens regardent jusqu’au bout et partage avec leurs
+				amis
 			</p>
 		</SectionHeading>
 
-		<!-- Interactive Filter Buttons & Video Grid -->
 		<PortfolioFilter client:load />
 
-		<!-- Bottom Testimonials: Facebook / Social Ad Comment Screenshots -->
 		<div class="pt-6 md:pt-8">
-			<TestimonialScreenshots />
+			<AudienceComments />
 		</div>
 	</main>
 </Layout>

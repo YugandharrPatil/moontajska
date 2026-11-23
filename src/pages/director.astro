@@ -1,0 +1,55 @@
+---
+import Layout from "@/layouts/layout.astro";
+import SectionHeading from "@/components/section-heading.astro";
+---
+
+<Layout title="Director">
+	<main class="w-full max-w-300 mx-auto px-4 pt-8 pb-16 md:px-8 md:pt-16 md:pb-24 space-y-8">
+		<SectionHeading>
+			<h1>Director</h1>
+			<p class="!font-normal">
+				Krishna Bagadiya – Director & Producer at Moontajska Productions
+			</p>
+		</SectionHeading>
+
+		<div class="flex justify-center items-center py-6">
+			<div
+				class="badge-base LI-profile-badge min-h-[280px] flex items-center justify-center"
+				data-locale="en_US"
+				data-size="large"
+				data-theme="light"
+				data-type="VERTICAL"
+				data-vanity="krishna-bagadiya"
+				data-version="v1"
+			>
+				<a
+					class="badge-base__link LI-simple-link text-primary underline underline-offset-4 font-jost"
+					href="https://in.linkedin.com/in/krishna-bagadiya?trk=profile-badge"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					Krishna Bagadiya
+				</a>
+			</div>
+		</div>
+	</main>
+
+	<script
+		is:inline
+		src="https://platform.linkedin.com/badges/js/profile.js"
+		async
+		defer
+		type="text/javascript"
+	></script>
+
+	<script>
+		const renderLinkedInBadge = () => {
+			if (typeof (window as any).LIRenderAll === "function") {
+				(window as any).LIRenderAll();
+			}
+		};
+
+		document.addEventListener("astro:page-load", renderLinkedInBadge);
+		document.addEventListener("DOMContentLoaded", renderLinkedInBadge);
+	</script>
+</Layout>

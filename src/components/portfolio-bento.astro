@@ -2,18 +2,14 @@
 import VimeoEmbed from "./vimeo-embed.astro";
 import SectionHeading from "./section-heading.astro";
 import { portfolioSections, type BentoSection } from "../data/portfolio";
+import PillButton from "./ui/pill-button.astro";
 
-export interface Props {
+export type Props = {
 	sections?: BentoSection[];
 	limit?: number;
-	heading?: string;
-	subheading?: string;
-	showHeading?: boolean;
 	showSectionTitles?: boolean;
 	showSeeMore?: boolean;
-	seeMoreHref?: string;
-	seeMoreText?: string;
-}
+};
 
 const {
 	sections = portfolioSections,
@@ -27,14 +23,10 @@ const displaySections = limit ? sections.slice(0, limit) : sections;
 
 <div class="w-full space-y-6 md:space-y-8 pt-6 md:pt-12">
 	<SectionHeading>
-		<h1>des vidéos humouristiques, cinématographiques et publicitaires</h1>
+		<h1>comédie, cinéma, et marketing</h1>
 		<p>
-			100% de clients satisfaits, +400 entreprises accompagnées et des vidéos
-			qui apportent vraiment des résultats.
-		</p>
-		<p>
-			100% de clients satisfaits, +400 entreprises accompagnées et des vidéos
-			qui apportent vraiment des résultats.
+			150 millions de vues organiques. des pubs que les gens regardent par
+			choix.
 		</p>
 	</SectionHeading>
 
@@ -84,12 +76,7 @@ const displaySections = limit ? sections.slice(0, limit) : sections;
 	</div>
 	{showSeeMore && (
 		<div class="text-center pt-0 pb-4">
-			<a
-				href="/videos"
-				class="inline-block text-base font-jost border border-black px-6 py-2 rounded-full transition-all hover:bg-black hover:text-white"
-			>
-				+ de vidéos
-			</a>
+			<PillButton href="/portfolio" text="+ de vidéos" />
 		</div>
 	)}
 </div>

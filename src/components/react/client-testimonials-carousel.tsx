@@ -40,7 +40,7 @@ const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "Krishna a fait preuve d'une créativité et d'un esprit d'initiative exceptionnels en concevant et en produisant la série web Crazy Grammar à partir de zéro, en s'occupant de tout, de l'écriture du scénario à la réalisation, et en attirant avec succès un large public sur les médias sociaux.",
+      "Krishna a fait preuve d'une créativité et d'une initiative exceptionnelles en concevant 5 vidéos drôles, de l'écriture à la réalisation, attirant avec succès un large public en ligne.",
     author: "Vera Mihailovich-Dickman",
     role: "Professeur",
     company: "Université Paris-Saclay",
@@ -127,11 +127,11 @@ export default function ClientTestimonialsCarousel() {
         setApi={setApi}
         className="w-full"
       >
-        <CarouselContent className="-ml-4 py-2 items-stretch">
+        <CarouselContent className="-ml-2 md:-ml-3 py-2 items-stretch">
           {testimonials.map((item, index) => (
             <CarouselItem
               key={`${item.author}-${index}`}
-              className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3 flex shrink-0"
+              className="pl-2 md:pl-3 basis-full sm:basis-1/2 lg:basis-1/3 flex shrink-0"
             >
               <div className="flex flex-col justify-between w-full p-6 rounded-2xl bg-white border border-border/80 shadow-xs hover:border-black/30 hover:shadow-md transition-all duration-300 text-left">
                 <div className="space-y-4">

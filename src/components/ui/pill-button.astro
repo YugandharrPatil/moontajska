@@ -1,0 +1,15 @@
+---
+export type Props = {
+	href: string;
+	text: string;
+};
+
+const { href, text } = Astro.props;
+---
+
+<a
+	href={href}
+	class="inline-block text-base font-jost border border-black px-6 py-2 rounded-full transition-all hover:bg-black hover:text-white"
+>
+	{text}
+</a>

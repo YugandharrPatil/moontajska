@@ -1,0 +1,15 @@
+---
+import ClientTestimonialsCarousel from "./react/client-testimonials-carousel";
+import SectionHeader from "./section-heading.astro";
+---
+
+<section
+	id="clients"
+	class="w-full pt-10 pb-8 space-y-8 md:space-y-10 scroll-mt-24"
+>
+	<SectionHeader>
+		<h1>ce que nos clients en disent</h1>
+		<p>ils ont osé. voilà ce qu'ils en pensent.</p>
+	</SectionHeader>
+	<ClientTestimonialsCarousel client:load />
+</section>

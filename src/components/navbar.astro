@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import logo from "../assets/Moontajska_logo.png";
+import PillButton from "./ui/pill-button.astro";
 
 const LINKS = [
 	// {
@@ -10,13 +11,13 @@ const LINKS = [
 	// },
 	{
 		id: 1,
-		text: "backstory",
-		href: "/backstory",
+		text: "director",
+		href: "/director",
 	},
 	{
 		id: 2,
-		text: "videos",
-		href: "/videos",
+		text: "portfolio",
+		href: "/portfolio",
 	},
 	{
 		id: 3,
@@ -57,12 +58,7 @@ const LINKS = [
 					})}
 				</div>
 				{LINKS.filter((l) => l.href === "/#book-us").map((link) => (
-					<a
-						href={link.href}
-						class="text-base font-jost border border-black px-5 py-2 rounded-full transition-all hover:bg-black hover:text-white"
-					>
-						{link.text}
-					</a>
+					<PillButton href={link.href} text="book a call" />
 				))}
 			</div>
 			<button

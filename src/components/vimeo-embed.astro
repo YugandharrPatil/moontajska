@@ -4,7 +4,7 @@ export type Props = {
 	title?: string;
 	aspect?: "portrait" | "landscape";
 	class?: string;
-	hero: boolean;
+	hero?: boolean;
 };
 
 const {
@@ -25,21 +25,19 @@ const cleanId =
 <div
 	class={`relative w-full overflow-hidden bg-black rounded-lg ${aspect === "portrait" ? "aspect-[9/16]" : "aspect-[16/9]"} ${className}`}
 >
-	{
-		cleanId ? (
-			<iframe
-				src={`https://player.vimeo.com/video/${cleanId}?autopause=0&loop=0&muted=0&title=${hero ? "0" : "1"}&portrait=0&byline=0`}
-				class="absolute inset-0 w-full h-full border-0"
-				allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-				referrerpolicy="strict-origin-when-cross-origin"
-				allowfullscreen
-				loading="lazy"
-				title={title || "Video"}
-			/>
-		) : (
-			<div class="absolute inset-0 flex items-center justify-center text-muted-foreground bg-muted/40 text-sm">
-				Video embed placeholder
-			</div>
-		)
-	}
+	{cleanId ? (
+		<iframe
+			src={`https://player.vimeo.com/video/${cleanId}?autopause=0&loop=0&muted=0&title=${hero ? "0" : "1"}&portrait=0&byline=0`}
+			class="absolute inset-0 w-full h-full border-0"
+			allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+			referrerpolicy="strict-origin-when-cross-origin"
+			allowfullscreen
+			loading="lazy"
+			title={title || "Video"}
+		/>
+	) : (
+		<div class="absolute inset-0 flex items-center justify-center text-muted-foreground bg-muted/40 text-sm">
+			Video embed placeholder
+		</div>
+	)}
 </div>

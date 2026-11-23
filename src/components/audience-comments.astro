@@ -3,18 +3,18 @@ import { Image } from "astro:assets";
 import SectionHeader from "./section-heading.astro";
 
 // Audience comment screenshots
-import imgDeck from "../assets/audience/Moontajska Deck FR 2025.png";
-import img1 from "../assets/audience/Moontajska Deck FR 2025-1.png";
-import img2 from "../assets/audience/Moontajska Deck FR 2025-2.png";
-import img3 from "../assets/audience/Moontajska Deck FR 2025-3.png";
-import img4 from "../assets/audience/Moontajska Deck FR 2025-4.png";
-import img5 from "../assets/audience/Moontajska Deck FR 2025-5.png";
-import img6 from "../assets/audience/Moontajska Deck FR 2025-6.png";
-import img7 from "../assets/audience/Moontajska Deck FR 2025-7.png";
-import img8 from "../assets/audience/Moontajska Deck FR 2025-8.png";
-import img9 from "../assets/audience/Moontajska Deck FR 2025-9.png";
-import img10 from "../assets/audience/Moontajska Deck FR 2025-10.png";
-import img11 from "../assets/audience/Moontajska Deck FR 2025-11.png";
+import imgDeck from "../assets/comments/Moontajska Deck FR 2025.png";
+import img1 from "../assets/comments/Moontajska Deck FR 2025-1.png";
+import img2 from "../assets/comments/Moontajska Deck FR 2025-2.png";
+import img3 from "../assets/comments/Moontajska Deck FR 2025-3.png";
+import img4 from "../assets/comments/Moontajska Deck FR 2025-4.png";
+import img5 from "../assets/comments/Moontajska Deck FR 2025-5.png";
+import img6 from "../assets/comments/Moontajska Deck FR 2025-6.png";
+import img7 from "../assets/comments/Moontajska Deck FR 2025-7.png";
+import img8 from "../assets/comments/Moontajska Deck FR 2025-8.png";
+import img9 from "../assets/comments/Moontajska Deck FR 2025-9.png";
+import img10 from "../assets/comments/Moontajska Deck FR 2025-10.png";
+import img11 from "../assets/comments/Moontajska Deck FR 2025-11.png";
 
 // Distribute images into 3 rows with balanced dimensions and aspect ratios
 // Row 1 (slides right)
@@ -38,20 +38,14 @@ const row3Track = [...row3Items, ...row3Items];
 <section class="w-full pt-10 pb-0 space-y-8 md:space-y-10">
 	<div class="pt-12 md:pt-16 space-y-8 md:space-y-10">
 		<SectionHeader>
-			<h1>le public en parlent</h1>
-			<p>
-				100% de clients satisfaits, +400 entreprises accompagnées et des vidéos
-				qui apportent vraiment des résultats.
-			</p>
+			<h1>le public en parle</h1>
+			<p>la notoriété, ça se lit dans les commentaires.</p>
 		</SectionHeader>
 
-		<!-- 3-row infinite slider in alternate directions -->
-		<div class="relative w-full overflow-hidden py-2 space-y-4 sm:space-y-5">
-			<!-- Fade edge masks -->
+		<!-- <div class="relative w-full overflow-hidden py-2 space-y-4 sm:space-y-5">
 			<div class="pointer-events-none absolute inset-y-0 left-0 w-12 sm:w-20 md:w-32 bg-gradient-to-r from-white to-transparent z-10"></div>
 			<div class="pointer-events-none absolute inset-y-0 right-0 w-12 sm:w-20 md:w-32 bg-gradient-to-l from-white to-transparent z-10"></div>
 
-			<!-- Row 1: sliding right -->
 			<div class="marquee-track-row1 flex items-center">
 				{row1Track.map((img, idx) => (
 					<div class="shrink-0 flex items-center justify-center h-28 sm:h-32 md:h-36 p-2.5 sm:p-3 rounded-xl md:rounded-2xl border border-border bg-card shadow-xs hover:border-primary/40 hover:shadow-md transition-all duration-200 mr-4 sm:mr-5">
@@ -64,7 +58,6 @@ const row3Track = [...row3Items, ...row3Items];
 				))}
 			</div>
 
-			<!-- Row 2: sliding left -->
 			<div class="marquee-track-row2 flex items-center">
 				{row2Track.map((img, idx) => (
 					<div class="shrink-0 flex items-center justify-center h-28 sm:h-32 md:h-36 p-2.5 sm:p-3 rounded-xl md:rounded-2xl border border-border bg-card shadow-xs hover:border-primary/40 hover:shadow-md transition-all duration-200 mr-4 sm:mr-5">
@@ -77,7 +70,6 @@ const row3Track = [...row3Items, ...row3Items];
 				))}
 			</div>
 
-			<!-- Row 3: sliding right -->
 			<div class="marquee-track-row3 flex items-center">
 				{row3Track.map((img, idx) => (
 					<div class="shrink-0 flex items-center justify-center h-28 sm:h-32 md:h-36 p-2.5 sm:p-3 rounded-xl md:rounded-2xl border border-border bg-card shadow-xs hover:border-primary/40 hover:shadow-md transition-all duration-200 mr-4 sm:mr-5">
@@ -89,7 +81,7 @@ const row3Track = [...row3Items, ...row3Items];
 					</div>
 				))}
 			</div>
-		</div>
+		</div> -->
 	</div>
 </section>
 
