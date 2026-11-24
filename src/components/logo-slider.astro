@@ -1,4 +1,6 @@
 ---
+import { cn } from "@/lib/utils";
+
 // type Testimonial = {
 // 	quote: string;
 // 	author: string;
@@ -31,6 +33,7 @@ type Brand = {
 	name: string;
 	logo: string;
 	alt: string;
+	size?: number | string;
 	class?: string;
 };
 
@@ -39,163 +42,162 @@ const brands: Brand[] = [
 		name: "Boku",
 		logo: "/logos/boku.png",
 		alt: "Boku logo",
-		class: "h-[20px] md:h-[22px] max-w-28 md:max-w-32",
+		class: "h-[22px]",
 	},
 	{
 		name: "Urban Circus",
 		logo: "/logos/urban-circus.svg",
 		alt: "Urban Circus logo",
-		class: "h-[28px] md:h-[30px] max-w-32 md:max-w-36",
+		class: "h-[30px]",
 	},
 	{
 		name: "Lingoda",
 		logo: "/logos/lingoda.png",
 		alt: "Lingoda logo",
-		class: "h-[28px] md:h-[30px] max-w-32 md:max-w-36",
+		class: "h-[30px]",
 	},
 	{
 		name: "Livlab",
 		logo: "/logos/livlab.svg",
 		alt: "Livlab logo",
-		class: "h-[22px] md:h-[24px] max-w-28 md:max-w-32",
+		class: "h-[24px]",
 	},
 	{
 		name: "Sisters Republic",
 		logo: "/logos/sisters-republic.png",
 		alt: "Sisters Republic logo",
-		class: "h-[36px] md:h-[40px] max-w-28 md:max-w-32",
+		class: "h-[38px]",
 	},
 	{
 		name: "Saolar",
 		logo: "/logos/saolar.png",
 		alt: "Saolar logo",
-		class: "h-[24px] md:h-[26px] max-w-36 md:max-w-40",
+		class: "h-[26px]",
 	},
 	{
 		name: "Gymglish",
 		logo: "/logos/gymglish.png",
 		alt: "Gymglish logo",
-		class: "h-[28px] md:h-[32px] max-w-32 md:max-w-36",
+		class: "h-[30px]",
 	},
 	{
 		name: "Deep Belief",
 		logo: "/logos/deep-belief.png",
 		alt: "Deep Belief logo",
-		class: "h-[30px] md:h-[34px] max-w-40 md:max-w-44",
+		class: "h-[42px]",
 	},
 	{
 		name: "900.care",
 		logo: "/logos/900.png",
 		alt: "900.care logo",
-		class: "h-[24px] md:h-[28px] max-w-24 md:max-w-28",
+		class: "h-[40px] pt-1",
 	},
 	{
 		name: "Coiffissimo Professional",
 		logo: "/logos/coiffissimo.png",
 		alt: "Coiffissimo Professional logo",
-		class: "h-[28px] md:h-[32px] max-w-32 md:max-w-36",
+		class: "h-[36px]",
 	},
 	{
 		name: "Tutoroo",
 		logo: "/logos/tutoroo.png",
 		alt: "Tutoroo logo",
-		class: "h-[28px] md:h-[30px] max-w-32 md:max-w-36",
+		class: "h-[36px]",
 	},
 	{
 		name: "Mosaik",
 		logo: "/logos/mosaik.svg",
 		alt: "Mosaik logo",
-		class: "h-[22px] md:h-[24px] max-w-36 md:max-w-40",
+		class: "h-[24px]",
 	},
 	{
 		name: "Caats",
 		logo: "/logos/caats.png",
 		alt: "Caats logo",
-		class: "h-[24px] md:h-[26px] max-w-28 md:max-w-32",
+		class: "h-[26px]",
 	},
 	{
 		name: "Université Paris-Saclay",
 		logo: "/logos/universite-paris-saclay.png",
 		alt: "Université Paris-Saclay logo",
-		class: "h-[34px] md:h-[38px] max-w-32 md:max-w-36",
+		class: "h-[42px] mb-4",
 	},
 	{
 		name: "Pronounce",
 		logo: "/logos/pronounce.png",
 		alt: "Pronounce logo",
-		class: "h-[24px] md:h-[26px] max-w-44 md:max-w-48",
+		class: "h-[26px]",
 	},
 	{
 		name: "Kolsquare",
 		logo: "/logos/kolsquare.png",
 		alt: "Kolsquare logo",
-		class: "h-[28px] md:h-[30px] max-w-32 md:max-w-36",
+		class: "h-[40px]",
 	},
 	{
 		name: "Lilly Skin",
 		logo: "/logos/lily-skin.png",
 		alt: "Lilly Skin logo",
-		class: "h-[36px] md:h-[40px] max-w-32 md:max-w-36",
+		class: "h-[44px]",
 	},
 	{
 		name: "Western Union",
 		logo: "/logos/western-union.png",
 		alt: "Western Union logo",
-		class: "h-[22px] md:h-[24px] max-w-28 md:max-w-32",
+		class: "h-[32px]",
 	},
 	{
 		name: "Multilangues Formation",
 		logo: "/logos/multilangues.png",
 		alt: "Multilangues Formation logo",
-		class: "h-[24px] md:h-[28px] max-w-36 md:max-w-40",
+		class: "h-[32px]",
 	},
 	{
 		name: "La Bourse aux Livres",
 		logo: "/logos/bourse.png",
 		alt: "La Bourse aux Livres logo",
-		class: "h-[32px] md:h-[36px] max-w-32 md:max-w-36",
+		class: "h-[34px]",
 	},
 	{
 		name: "Circles",
 		logo: "/logos/circles.png",
 		alt: "Circles logo",
-		class: "h-[22px] md:h-[24px] max-w-28 md:max-w-32",
+		class: "h-[24px]",
 	},
 	{
 		name: "Pocket FM",
 		logo: "/logos/pocket-fm.png",
 		alt: "Pocket FM logo",
-		class: "h-[26px] md:h-[28px] max-w-32 md:max-w-36",
+		class: "h-[32px]",
 	},
 	{
 		name: "Spliiit",
 		logo: "/logos/spliiit.png",
 		alt: "Spliiit logo",
-		class: "h-[26px] md:h-[28px] max-w-28 md:max-w-32",
+		class: "h-[28px]",
 	},
 	{
 		name: "Luminette",
 		logo: "/logos/luminette.png",
 		alt: "Luminette logo",
-		class: "h-[26px] md:h-[28px] max-w-32 md:max-w-36",
+		class: "h-[28px]",
 	},
 	{
 		name: "Cook-e",
 		logo: "/logos/cook-e.png",
 		alt: "Cook-e logo",
-		class: "h-[22px] md:h-[24px] max-w-24 md:max-w-28",
+		class: "h-[24px]",
 	},
 	{
 		name: "Invest",
 		logo: "/logos/invest.png",
 		alt: "Invest logo",
-		class: "h-[26px] md:h-[28px] max-w-32 md:max-w-36",
+		class: "h-[28px]",
 	},
 ];
 ---
 
 <section class="w-screen relative left-1/2 -translate-x-1/2 py-2 md:py-4">
-	<!-- Logos Slider / Marquee -->
 	<div class="space-y-4 text-center">
 		<p class="text-base text-muted-foreground font-jost font-regular">
 			nos vidéos ont fait exploser la notoriété (et la vente) des startups, des
@@ -203,6 +205,12 @@ const brands: Brand[] = [
 		</p>
 
 		<div class="relative w-full overflow-hidden py-4 border-y border-border">
+			{/* Guides for sizing (30px gap centered vertically) */}
+			<div class="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 h-[24px] flex flex-col justify-between z-20">
+				<hr class="w-full border-t border-red-500/80 border-dashed m-0" />
+				<hr class="w-full border-t border-red-500/80 border-dashed m-0" />
+			</div>
+
 			<!-- Infinite ticker -->
 			<div class="animate-marquee flex items-center gap-12 md:gap-16 whitespace-nowrap py-1">
 				{
@@ -213,7 +221,20 @@ const brands: Brand[] = [
 								src={brand.logo}
 								alt={brand.alt}
 								loading="lazy"
-								class={`w-auto object-contain dark:invert select-none pointer-events-none ${brand.class || "h-7 md:h-8 max-w-32 md:max-w-40"}`}
+								class={cn(
+									"h-7 w-auto object-contain select-none pointer-events-none dark:invert",
+									typeof brand.size === "string" &&
+										(brand.size.startsWith("h-")
+											? brand.size
+											: `h-[${brand.size}]`),
+									typeof brand.size === "number" && `h-[${brand.size}px]`,
+									brand.class,
+								)}
+								style={
+									typeof brand.size === "number"
+										? { height: `${brand.size}px` }
+										: undefined
+								}
 							/>
 						</div>
 					))

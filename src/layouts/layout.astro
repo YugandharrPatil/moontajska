@@ -12,7 +12,7 @@ const { title = "Moontajska Productions" } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" transition:animate="none">
+<html lang="en" class="scroll-smooth" transition:animate="none">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -41,5 +41,52 @@ const { title = "Moontajska Productions" } = Astro.props;
 			<slot />
 		</div>
 		<Footer />
+
+		<script>
+			function handleSmoothScroll(e: MouseEvent) {
+				const target = e.target as HTMLElement | null;
+				const anchor = target?.closest("a");
+				if (!anchor) return;
+
+				const href = anchor.getAttribute("href");
+				if (!href || href === "#" || href.startsWith("javascript:")) return;
+
+				try {
+					const targetUrl = new URL(anchor.href, window.location.href);
+					if (
+						targetUrl.origin === window.location.origin &&
+						targetUrl.pathname === window.location.pathname &&
+						targetUrl.hash
+					) {
+						const element = document.querySelector(targetUrl.hash);
+						if (element) {
+							e.preventDefault();
+							element.scrollIntoView({ behavior: "smooth" });
+							history.pushState(null, "", targetUrl.hash);
+						}
+					}
+				} catch {
+					// Fallback to default browser navigation
+				}
+			}
+
+			function scrollToHashOnLoad() {
+				if (window.location.hash) {
+					try {
+						const element = document.querySelector(window.location.hash);
+						if (element) {
+							setTimeout(() => {
+								element.scrollIntoView({ behavior: "smooth" });
+							}, 80);
+						}
+					} catch {
+						// Invalid hash selector ignore
+					}
+				}
+			}
+
+			document.addEventListener("click", handleSmoothScroll);
+			document.addEventListener("astro:page-load", scrollToHashOnLoad);
+		</script>
 	</body>
 </html>

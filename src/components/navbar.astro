@@ -2,6 +2,8 @@
 import { Image } from "astro:assets";
 import logo from "../assets/Moontajska_logo.png";
 import PillButton from "./ui/pill-button.astro";
+import { Button } from "./ui/button";
+import { Menu, X } from "lucide-react";
 
 const LINKS = [
 	// {
@@ -61,30 +63,23 @@ const LINKS = [
 					<PillButton href={link.href} text="book a call" />
 				))}
 			</div>
-			<button
+			<Button
 				id="mobile-menu-btn"
-				class="md:hidden bg-transparent border-none cursor-pointer p-2 transition-transform hover:scale-105"
+				variant="outline"
+				size="icon"
+				className="md:hidden"
 				aria-label="Menu"
+				aria-expanded="false"
 			>
-				<svg
-					width="28"
-					height="20"
-					viewBox="0 0 32 24"
-					fill="none"
-					xmlns="http://www.w3.org/2000/svg"
-				>
-					<rect width="32" height="3" fill="#1a1a1a"></rect>
-					<rect y="10" width="32" height="3" fill="#1a1a1a"></rect>
-					<rect y="20" width="24" height="3" fill="#1a1a1a"></rect>
-					<path d="M28 26L24 20H32L28 26Z" fill="#1a1a1a"></path>
-				</svg>
-			</button>
+				<Menu id="mobile-menu-icon" className="size-5 text-foreground" />
+				<X id="mobile-close-icon" className="size-5 text-foreground hidden" />
+			</Button>
 		</nav>
 
 		<!-- Mobile Menu -->
 		<div
 			id="mobile-menu"
-			class="hidden absolute top-full left-0 w-full bg-white flex-col items-center gap-6 py-8 shadow-xl border-t border-gray-100 md:hidden"
+			class="hidden absolute top-full left-0 w-full bg-white flex-col items-center gap-6 py-8 shadow-xl border-t border-gray-100 md:hidden z-50"
 		>
 			{LINKS.map((link) => (
 				<a
@@ -103,11 +98,50 @@ const LINKS = [
 </header>
 
 <script>
-	const menuBtn = document.getElementById("mobile-menu-btn");
-	const mobileMenu = document.getElementById("mobile-menu");
+	function setupMobileMenu() {
+		const menuBtn = document.getElementById("mobile-menu-btn");
+		const mobileMenu = document.getElementById("mobile-menu");
+		const menuIcon = document.getElementById("mobile-menu-icon");
+		const closeIcon = document.getElementById("mobile-close-icon");
 
-	menuBtn?.addEventListener("click", () => {
-		mobileMenu?.classList.toggle("hidden");
-		mobileMenu?.classList.toggle("flex");
-	});
+		if (!menuBtn || !mobileMenu) return;
+
+		const toggleMenu = () => {
+			const isClosed = mobileMenu.classList.contains("hidden");
+			if (isClosed) {
+				mobileMenu.classList.remove("hidden");
+				mobileMenu.classList.add("flex");
+				menuBtn.setAttribute("aria-expanded", "true");
+				menuIcon?.classList.add("hidden");
+				closeIcon?.classList.remove("hidden");
+			} else {
+				mobileMenu.classList.add("hidden");
+				mobileMenu.classList.remove("flex");
+				menuBtn.setAttribute("aria-expanded", "false");
+				menuIcon?.classList.remove("hidden");
+				closeIcon?.classList.add("hidden");
+			}
+		};
+
+		menuBtn.onclick = toggleMenu;
+
+		const links = mobileMenu.querySelectorAll("a");
+		links.forEach((link) => {
+			link.onclick = () => {
+				mobileMenu.classList.add("hidden");
+				mobileMenu.classList.remove("flex");
+				menuBtn.setAttribute("aria-expanded", "false");
+				menuIcon?.classList.remove("hidden");
+				closeIcon?.classList.add("hidden");
+			};
+		});
+	}
+
+	// Re-run on initial load and Astro client navigation (ClientRouter)
+	document.addEventListener("astro:page-load", setupMobileMenu);
+	if (document.readyState === "loading") {
+		document.addEventListener("DOMContentLoaded", setupMobileMenu);
+	} else {
+		setupMobileMenu();
+	}
 </script>
