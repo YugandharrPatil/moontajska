@@ -21,7 +21,7 @@ const {
 const displaySections = limit ? sections.slice(0, limit) : sections;
 ---
 
-<div class="w-full space-y-6 md:space-y-8 pt-6 md:pt-12">
+<div class="w-full space-y-6 md:space-y-8">
 	<SectionHeading>
 		<h1>comédie, cinéma, et marketing</h1>
 		<p>
@@ -75,7 +75,7 @@ const displaySections = limit ? sections.slice(0, limit) : sections;
 		))}
 	</div>
 	{showSeeMore && (
-		<div class="text-center pt-0 pb-4">
+		<div class="text-center">
 			<PillButton href="/portfolio" text="+ de vidéos" />
 		</div>
 	)}

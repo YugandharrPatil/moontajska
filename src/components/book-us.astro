@@ -7,14 +7,14 @@ const calLink = import.meta.env.PUBLIC_CAL_LINK;
 
 <section
 	id="book-us"
-	class="w-full pt-10 pb-0 flex flex-col items-center scroll-mt-24"
+	class="w-full space-y-6 md:space-y-8 flex flex-col items-center scroll-mt-24"
 >
 	<SectionHeader>
 		<h1>parlez directement au réal</h1>
 		<p>racontez-nous votre produit</p>
 	</SectionHeader>
 
-	<div class="w-full max-w-5xl mx-auto mt-10">
+	<div class="w-full">
 		<CalEmbed client:load calLink={calLink} />
 	</div>
 </section>

@@ -1,7 +1,7 @@
 ---
 import BookUs from "@/components/book-us.astro";
 import Cases from "@/components/cases.astro";
-import ClientTestimonialsCarousel from "@/components/client-testimonials-carousel.astro";
+import ClientTestimonials from "@/components/client-testimonials.astro";
 import Hero from "../components/hero.astro";
 import LogoSlider from "../components/logo-slider.astro";
 import PortfolioBento from "../components/portfolio-bento.astro";
@@ -9,11 +9,11 @@ import Layout from "../layouts/layout.astro";
 ---
 
 <Layout>
-	<main class="w-full max-w-300 mx-auto px-4 pt-2 pb-2 md:px-8 md:pt-4 md:pb-4 space-y-6 md:space-y-8">
+	<main class="mx-auto w-full max-w-300 space-y-12 px-4 pt-2 pb-0 md:space-y-16 md:px-8 md:pt-4 md:pb-0">
 		<Hero />
 		<LogoSlider />
 		<PortfolioBento limit={1} showSeeMore={true} />
-		<ClientTestimonialsCarousel />
+		<ClientTestimonials />
 		<Cases />
 		<BookUs />
 	</main>

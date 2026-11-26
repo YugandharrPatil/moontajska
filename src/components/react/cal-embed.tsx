@@ -39,21 +39,18 @@ export default function CalEmbed({
 	}, [namespace]);
 
 	return (
-		<div className="w-full overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-[0_4px_20px_rgba(0,0,0,0.05)]">
-			<div className="flex min-h-[650px] w-full items-center justify-center">
-				<Cal
-					namespace={namespace}
-					calLink={calLink}
-					calOrigin={calOrigin}
-					style={{
-						width: "100%",
-						height: "100%",
-						minHeight: "50px",
-						overflow: "auto",
-					}}
-					config={{ layout: "month_view", theme: "light" }}
-				/>
-			</div>
+		<div className="w-full overflow-hidden [&_iframe]:max-w-full [&_iframe]:overflow-hidden">
+			<Cal
+				namespace={namespace}
+				calLink={calLink}
+				calOrigin={calOrigin}
+				style={{
+					width: "100%",
+					height: "100%",
+					overflow: "hidden",
+				}}
+				config={{ layout: "month_view", theme: "light" }}
+			/>
 		</div>
 	);
 }

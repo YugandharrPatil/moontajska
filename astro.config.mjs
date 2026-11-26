@@ -7,25 +7,25 @@ import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
-  output: "server",
-  adapter: vercel(),
+	output: "server",
+	adapter: vercel(),
 
-  prefetch: {
-    prefetchAll: true,
-    defaultStrategy: "hover",
-  },
+	prefetch: {
+		prefetchAll: true,
+		defaultStrategy: "hover",
+	},
 
-  server: {
-    port: 3000,
-  },
+	server: {
+		port: 3000,
+	},
 
-  devToolbar: {
-    enabled: false,
-  },
+	devToolbar: {
+		enabled: false,
+	},
 
-  vite: {
-    plugins: [tailwindcss()],
-  },
+	vite: {
+		plugins: [tailwindcss()],
+	},
 
-  integrations: [react(), icon()],
+	integrations: [react(), icon()],
 });

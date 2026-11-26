@@ -8,19 +8,19 @@ const SUBHEADLINE =
 	"on transforme les produits quotidiens, complexes, ennuyeux ou tabous en vidéos que tout le monde partage";
 ---
 
-<section class="w-full pt-6 pb-1 md:pb-2 text-center">
-	<div class="max-w-6xl mx-auto space-y-2 px-12">
-		<h1 class="text-4xl sm:text-5xl md:text-4xl font-newsreader font-semibold text-foreground">
+<section class="w-full pt-4 pb-0 text-center md:pt-6">
+	<div class="mx-auto max-w-6xl space-y-0 px-4 sm:px-8 md:px-12">
+		<h1 class="font-newsreader text-foreground text-[1.625rem] leading-[1.2] font-semibold text-balance sm:text-4xl md:text-4xl">
 			{HEADLINE}
 		</h1>
-		<p class="font-jost max-w-3xl text-2xl sm:text-lg font-normal md:text-xl text-foreground mx-auto">
+		<p class="font-jost text-foreground mx-auto max-w-3xl text-[0.9375rem] leading-[1.35] font-normal sm:text-lg md:text-xl">
 			{SUBHEADLINE}
 		</p>
 	</div>
 
 	<!-- Hero Vimeo Video -->
-	<div class="mt-4 max-w-5xl mx-auto">
-		<div class="relative w-full rounded-xl sm:rounded-2xl overflow-hidden border border-border shadow-sm bg-black">
+	<div class="mx-auto mt-4 max-w-5xl">
+		<div class="border-border relative w-full overflow-hidden rounded-xl border bg-black shadow-sm sm:rounded-2xl">
 			<VimeoEmbed
 				videoId={HERO_VIDEO_ID}
 				title="Moontajska Featured Reel"

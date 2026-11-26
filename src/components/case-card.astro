@@ -1,0 +1,42 @@
+---
+import type { BlogPost } from "../data/blog";
+
+export type Props = {
+	post: BlogPost;
+}
+
+const { post } = Astro.props;
+---
+
+<a
+	href={post.linkedinUrl}
+	target="_blank"
+	rel="noopener noreferrer"
+	class="group border-border relative flex flex-col justify-between overflow-hidden rounded-2xl border bg-white text-left shadow-xs transition-all duration-300 hover:border-black/30 hover:shadow-md"
+>
+	<!-- Image Banner inside Card -->
+	<div class="bg-muted relative aspect-[2/1] w-full overflow-hidden">
+		<img
+			src={post.image}
+			alt={post.title}
+			class="h-full w-full object-cover transition-transform duration-500"
+			loading="lazy"
+		/>
+		<div class="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent"></div>
+		<div class="absolute top-3 left-3 flex items-center gap-2">
+			<span class="rounded-full bg-black/75 px-2.5 py-1 text-[11px] font-semibold tracking-wider text-white uppercase backdrop-blur-xs">
+				{post.client}
+			</span>
+		</div>
+	</div>
+
+	<!-- Card Body -->
+	<div class="font-jost flex flex-1 flex-col justify-between space-y-4 p-5">
+		<div class="space-y-2 text-center">
+			<h3 class="text-foreground text-base font-medium">{post.title}</h3>
+			<p class="text-muted-foreground line-clamp-2 text-xs leading-relaxed font-medium sm:text-sm">
+				{post.excerpt}
+			</p>
+		</div>
+	</div>
+</a>

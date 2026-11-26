@@ -1,4 +1,5 @@
 # references
+
 - https://departementstudio.com/
 - https://www.agenceshort.fr/
 
@@ -11,12 +12,13 @@
 - put same filters are departementstudio.com - done
 - put load more videos like agenceshort.fr - done
 - portfolio page
-	- autoplay of videos in homepage - pending...
-	- edges around videos - done
+  - autoplay of videos in homepage - pending...
+  - edges around videos - done
 - clients testimoniais slider on client page - later
 - case studies too on client page - later
 
 # video player libraries to replace vimeo embed
+
 - [react player](https://github.com/cookpete/react-player)
 - [vidstack player](https://vidstack.io/)
 - [video.js](https://videojs.org/) - [plyr](https://github.com/sampotts/plyr) (legacy)

@@ -5,7 +5,7 @@ type Brand = {
 	name: string;
 	logo: string;
 	alt: string;
-	size?: number | string;
+	height: number;
 	class?: string;
 };
 
@@ -14,199 +14,186 @@ const brands: Brand[] = [
 		name: "Boku",
 		logo: "/logos/boku.png",
 		alt: "Boku logo",
-		class: "h-[22px]",
+		height: 22,
 	},
 	{
 		name: "Urban Circus",
 		logo: "/logos/urban-circus.svg",
 		alt: "Urban Circus logo",
-		class: "h-[30px]",
+		height: 30,
 	},
 	{
 		name: "Lingoda",
 		logo: "/logos/lingoda.png",
 		alt: "Lingoda logo",
-		class: "h-[30px]",
+		height: 30,
 	},
 	{
 		name: "Livlab",
 		logo: "/logos/livlab.svg",
 		alt: "Livlab logo",
-		class: "h-[24px]",
+		height: 24,
 	},
 	{
 		name: "Sisters Republic",
 		logo: "/logos/sisters-republic.png",
 		alt: "Sisters Republic logo",
-		class: "h-[38px]",
+		height: 38,
 	},
 	{
 		name: "Saolar",
 		logo: "/logos/saolar.png",
 		alt: "Saolar logo",
-		class: "h-[26px]",
+		height: 26,
 	},
 	{
 		name: "Gymglish",
 		logo: "/logos/gymglish.png",
 		alt: "Gymglish logo",
-		class: "h-[30px]",
+		height: 30,
 	},
 	{
 		name: "Deep Belief",
 		logo: "/logos/deep-belief.png",
 		alt: "Deep Belief logo",
-		class: "h-[42px]",
+		height: 42,
 	},
 	{
 		name: "900.care",
 		logo: "/logos/900.png",
 		alt: "900.care logo",
-		class: "h-[40px] pt-1",
+		height: 40,
+		class: "pt-0.5 md:pt-1",
 	},
 	{
 		name: "Coiffissimo Professional",
 		logo: "/logos/coiffissimo.png",
 		alt: "Coiffissimo Professional logo",
-		class: "h-[36px]",
+		height: 36,
 	},
 	{
 		name: "Tutoroo",
 		logo: "/logos/tutoroo.png",
 		alt: "Tutoroo logo",
-		class: "h-[36px]",
+		height: 36,
 	},
 	{
 		name: "Mosaik",
 		logo: "/logos/mosaik.svg",
 		alt: "Mosaik logo",
-		class: "h-[24px]",
+		height: 24,
 	},
 	{
 		name: "Caats",
 		logo: "/logos/caats.png",
 		alt: "Caats logo",
-		class: "h-[26px]",
+		height: 26,
 	},
 	{
 		name: "Université Paris-Saclay",
 		logo: "/logos/universite-paris-saclay.png",
 		alt: "Université Paris-Saclay logo",
-		class: "h-[42px] mb-4",
+		height: 42,
+		class: "mb-2.5 md:mb-4",
 	},
 	{
 		name: "Pronounce",
 		logo: "/logos/pronounce.png",
 		alt: "Pronounce logo",
-		class: "h-[26px]",
+		height: 26,
 	},
 	{
 		name: "Kolsquare",
 		logo: "/logos/kolsquare.png",
 		alt: "Kolsquare logo",
-		class: "h-[40px]",
+		height: 40,
 	},
 	{
 		name: "Lilly Skin",
 		logo: "/logos/lily-skin.png",
 		alt: "Lilly Skin logo",
-		class: "h-[44px]",
+		height: 44,
 	},
 	{
 		name: "Western Union",
 		logo: "/logos/western-union.png",
 		alt: "Western Union logo",
-		class: "h-[32px]",
+		height: 32,
 	},
 	{
 		name: "Multilangues Formation",
 		logo: "/logos/multilangues.png",
 		alt: "Multilangues Formation logo",
-		class: "h-[32px]",
+		height: 32,
 	},
 	{
 		name: "La Bourse aux Livres",
 		logo: "/logos/bourse.png",
 		alt: "La Bourse aux Livres logo",
-		class: "h-[34px]",
+		height: 34,
 	},
 	{
 		name: "Circles",
 		logo: "/logos/circles.png",
 		alt: "Circles logo",
-		class: "h-[24px]",
+		height: 24,
 	},
 	{
 		name: "Pocket FM",
 		logo: "/logos/pocket-fm.png",
 		alt: "Pocket FM logo",
-		class: "h-[32px]",
+		height: 32,
 	},
 	{
 		name: "Spliiit",
 		logo: "/logos/spliiit.png",
 		alt: "Spliiit logo",
-		class: "h-[28px]",
+		height: 28,
 	},
 	{
 		name: "Luminette",
 		logo: "/logos/luminette.png",
 		alt: "Luminette logo",
-		class: "h-[28px]",
+		height: 28,
 	},
 	{
 		name: "Cook-e",
 		logo: "/logos/cook-e.png",
 		alt: "Cook-e logo",
-		class: "h-[24px]",
+		height: 24,
 	},
 	{
 		name: "Invest",
 		logo: "/logos/invest.png",
 		alt: "Invest logo",
-		class: "h-[28px]",
+		height: 28,
 	},
 ];
 ---
 
-<section class="w-screen relative left-1/2 -translate-x-1/2 py-2 md:py-4">
+<section class="w-screen relative left-1/2 -translate-x-1/2 py-0">
 	<div class="space-y-4 text-center">
 		<p class="text-base text-muted-foreground font-jost font-regular">
 			nos vidéos ont fait exploser la notoriété (et la vente) des startups, des
 			applis, des marques DTC
 		</p>
 
-		<div class="relative w-full overflow-hidden py-4 border-y border-border">
-			{/* Guides for sizing (30px gap centered vertically) */}
-			<div class="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 h-[24px] flex flex-col justify-between z-20">
-				<hr class="w-full border-t border-red-500/80 border-dashed m-0" />
-				<hr class="w-full border-t border-red-500/80 border-dashed m-0" />
-			</div>
-
+		<div class="relative w-full overflow-hidden py-3 md:py-4 border-y border-border">
 			<!-- Infinite ticker -->
-			<div class="animate-marquee flex items-center gap-12 md:gap-16 whitespace-nowrap py-1">
+			<div class="animate-marquee flex items-center gap-8 md:gap-16 whitespace-nowrap py-1">
 				{
 					// Duplicate twice for continuous seamless loop
 					[...brands, ...brands].map((brand) => (
-						<div class="flex items-center justify-center shrink-0 h-10 md:h-12 px-2 group opacity-75 hover:opacity-100 transition-opacity">
+						<div class="flex items-center justify-center shrink-0 h-8 md:h-12 px-1.5 md:px-2 group opacity-75 hover:opacity-100 transition-opacity">
 							<img
 								src={brand.logo}
 								alt={brand.alt}
 								loading="lazy"
 								class={cn(
-									"h-7 w-auto object-contain select-none pointer-events-none dark:invert",
-									typeof brand.size === "string" &&
-										(brand.size.startsWith("h-")
-											? brand.size
-											: `h-[${brand.size}]`),
-									typeof brand.size === "number" && `h-[${brand.size}px]`,
+									"w-auto object-contain select-none pointer-events-none dark:invert h-[calc(var(--logo-h)*0.7)] md:h-[var(--logo-h)]",
 									brand.class,
 								)}
-								style={
-									typeof brand.size === "number"
-										? { height: `${brand.size}px` }
-										: undefined
-								}
+								style={`--logo-h: ${brand.height}px;`}
 							/>
 						</div>
 					))

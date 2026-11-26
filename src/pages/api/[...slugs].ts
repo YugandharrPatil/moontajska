@@ -1,5 +1,5 @@
-import type { APIRoute } from 'astro';
-import { app } from '../../server/elysia';
+import type { APIRoute } from "astro";
+import { app } from "../../server/elysia";
 
 const handle: APIRoute = ({ request }) => app.handle(request);
 
