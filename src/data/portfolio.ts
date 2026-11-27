@@ -1,10 +1,10 @@
 export type Category =
 	| "All"
 	| "App"
-	| "Beauty"
-	| "Beauty / Hygiene"
+	| "Hygiene"
 	| "Education"
 	| "Fashion"
+	| "Beauty"
 	| "Hygiene"
 	| "Kids"
 	| "Pets"
@@ -30,10 +30,10 @@ export interface BentoSection {
 export const CATEGORIES: Category[] = [
 	"All",
 	"App",
-	"Beauty",
-	"Beauty / Hygiene",
+	"Hygiene",
 	"Education",
 	"Fashion",
+	"Beauty",
 	"Hygiene",
 	"Kids",
 	"Pets",
@@ -52,14 +52,14 @@ export const portfolioSections: BentoSection[] = [
 				title: "900 | Matrix",
 				aspect: "portrait",
 				span: "col-span-1",
-				category: "Beauty / Hygiene",
+				category: "Hygiene",
 			},
 			{
 				id: "1011954936",
 				title: "900 | Trump",
 				aspect: "portrait",
 				span: "col-span-1",
-				category: "Beauty / Hygiene",
+				category: "Hygiene",
 			},
 			{
 				id: "769455742",
@@ -82,14 +82,14 @@ export const portfolioSections: BentoSection[] = [
 				title: "900 | Baywatch",
 				aspect: "portrait",
 				span: "col-span-1",
-				category: "Beauty / Hygiene",
+				category: "Hygiene",
 			},
 			{
 				id: "1011968294",
 				title: "900 | Dealers",
 				aspect: "portrait",
 				span: "col-span-1",
-				category: "Beauty / Hygiene",
+				category: "Hygiene",
 			},
 		],
 	},
@@ -103,7 +103,7 @@ export const portfolioSections: BentoSection[] = [
 				title: "900 | Thanos",
 				aspect: "portrait",
 				span: "col-span-1",
-				category: "Beauty / Hygiene",
+				category: "Hygiene",
 			},
 			{
 				id: "1011965145",
@@ -154,7 +154,7 @@ export const portfolioSections: BentoSection[] = [
 				title: "900 | Cemetery",
 				aspect: "portrait",
 				span: "col-span-1",
-				category: "Beauty / Hygiene",
+				category: "Hygiene",
 			},
 		],
 	},
@@ -182,7 +182,7 @@ export const portfolioSections: BentoSection[] = [
 				title: "900 | Histoire Gel Douche",
 				aspect: "portrait",
 				span: "col-span-1",
-				category: "Beauty / Hygiene",
+				category: "Hygiene",
 			},
 		],
 		rightVideos: [
@@ -291,7 +291,7 @@ export const portfolioSections: BentoSection[] = [
 				title: "900 | Rap Battle",
 				aspect: "portrait",
 				span: "col-span-1",
-				category: "Beauty / Hygiene",
+				category: "Hygiene",
 			},
 			{
 				id: "882843574",
@@ -400,7 +400,7 @@ export const portfolioSections: BentoSection[] = [
 				title: "900 | Débat Legislatives",
 				aspect: "portrait",
 				span: "col-span-1",
-				category: "Beauty / Hygiene",
+				category: "Hygiene",
 			},
 		],
 	},
@@ -458,7 +458,7 @@ export const portfolioSections: BentoSection[] = [
 				title: "900 | Cascadeuse",
 				aspect: "landscape",
 				span: "col-span-2",
-				category: "Beauty / Hygiene",
+				category: "Hygiene",
 			},
 			{
 				id: "923244519",

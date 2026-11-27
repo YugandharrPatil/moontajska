@@ -1,9 +1,9 @@
 ---
 import { Image } from "astro:assets";
-import logo from "../assets/Moontajska_logo.png";
-import PillButton from "./ui/pill-button.astro";
-import { Button } from "./ui/button";
 import { Menu, X } from "lucide-react";
+import logo from "../assets/Moontajska_logo.png";
+import { Button } from "./ui/button";
+import PillButton from "./ui/pill-button.astro";
 
 const LINKS = [
 	// {
@@ -11,11 +11,11 @@ const LINKS = [
 	// 	text: "about",
 	// 	href: "/about",
 	// },
-	{
-		id: 1,
-		text: "director",
-		href: "/director",
-	},
+	// {
+	// 	id: 1,
+	// 	text: "director",
+	// 	href: "/director",
+	// },
 	{
 		id: 2,
 		text: "portfolio",
@@ -34,25 +34,25 @@ const LINKS = [
 ];
 ---
 
-<header class="bg-white sticky top-0 z-50">
-	<div class="w-full max-w-300 mx-auto px-4 md:px-8 py-4 md:py-6 flex justify-between items-center relative">
+<header class="sticky top-0 z-50 bg-white">
+	<div class="relative mx-auto flex w-full max-w-300 items-center justify-between px-4 py-4 md:px-8 md:py-6">
 		<div class="logo-container">
 			<a href="/">
 				<Image
 					src={logo}
 					alt="Moontajska Productions"
-					class="h-10 md:h-12 w-auto object-contain"
+					class="h-10 w-auto object-contain md:h-12"
 				/>
 			</a>
 		</div>
 		<nav class="flex items-center">
-			<div class="hidden md:flex items-center gap-24">
+			<div class="hidden items-center gap-24 md:flex">
 				<div class="flex items-center gap-10">
 					{LINKS.filter((l) => l.href !== "/#book-us").map((link) => {
 						return (
 							<a
 								href={link.href}
-								class="text-base transition-opacity hover:opacity-60 font-jost"
+								class="font-jost text-base transition-opacity hover:opacity-60"
 							>
 								{link.text}
 							</a>
@@ -71,22 +71,22 @@ const LINKS = [
 				aria-label="Menu"
 				aria-expanded="false"
 			>
-				<Menu id="mobile-menu-icon" className="size-5 text-foreground" />
-				<X id="mobile-close-icon" className="size-5 text-foreground hidden" />
+				<Menu id="mobile-menu-icon" className="text-foreground size-5" />
+				<X id="mobile-close-icon" className="text-foreground hidden size-5" />
 			</Button>
 		</nav>
 
 		<!-- Mobile Menu -->
 		<div
 			id="mobile-menu"
-			class="hidden absolute top-full left-0 w-full bg-white flex-col items-center gap-6 py-8 shadow-xl border-t border-gray-100 md:hidden z-50"
+			class="absolute top-full left-0 z-50 hidden w-full flex-col items-center gap-6 border-t border-gray-100 bg-white py-8 shadow-xl md:hidden"
 		>
 			{LINKS.map((link) => (
 				<a
 					href={link.href}
 					class={
 						link.href === "/#book-us"
-							? "text-sm font-jost border border-black px-6 py-2 rounded-full tracking-[1px] text-[#1a1a1a] transition-all hover:bg-black hover:text-white"
+							? "font-jost rounded-full border border-black px-6 py-2 text-sm tracking-[1px] text-[#1a1a1a] transition-all hover:bg-black hover:text-white"
 							: "text-[0.85rem] font-light tracking-[2px] text-[#1a1a1a] transition-opacity hover:opacity-60"
 					}
 				>

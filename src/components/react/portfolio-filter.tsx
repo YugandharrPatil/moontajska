@@ -185,9 +185,9 @@ export default function PortfolioFilter() {
 	const hasReachedEnd = totalHeight > 0 && currentLimit >= totalHeight - 20;
 
 	return (
-		<div className="w-full space-y-8 md:space-y-6">
+		<div className="w-full space-y-3">
 			{/* Category Filter Buttons */}
-			<div className="flex flex-wrap items-center justify-center gap-2 md:gap-3">
+			<div className="flex flex-wrap items-center justify-center gap-1 md:gap-3">
 				{CATEGORIES.map((category) => {
 					const isActive = activeCategory === category;
 
@@ -197,7 +197,7 @@ export default function PortfolioFilter() {
 							variant="ghost"
 							size="default"
 							onClick={() => handleCategoryChange(category)}
-							className={`rounded-full px-4 text-xs md:text-sm font-jost font-medium lowercase transition-all ${
+							className={`h-7 md:h-8 rounded-full px-3 md:px-4 text-xs md:text-sm font-jost font-medium lowercase transition-all ${
 								isActive
 									? "bg-muted text-foreground font-semibold"
 									: "text-muted-foreground hover:text-foreground"
